@@ -1,10 +1,12 @@
 <template>
   <div class="loading-bg">
-    <div class="loading-bg__name">ROSE WANG</div>
-    <div class="loading-bg__title">Front-End Engineer / Software Engineer</div>
+    <div class="loading-bg__name">{{ data.loading.name }}</div>
+    <div class="loading-bg__title">{{ data.loading.title }}</div>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { data } from '@/constants';
+</script>
 <style lang="scss" scoped>
 .loading-bg {
   width: 100vw;

@@ -1,28 +1,28 @@
 <template>
   <div class="about">
     <div class="text">
-      <div class="text__name">ROSE WANG</div>
-      <div class="text__title">Front-End Engineer / Software Engineer</div>
+      <div class="text__name">{{ data.about.name }}</div>
+      <div class="text__title">{{ data.about.title }}</div>
       <div class="text__introduce">
-        前端開發前端開發前端開發前端開發前端開發前端開發前端開發前端開發
+        {{ data.about.introduce }}
       </div>
     </div>
     <div class="links">
-      <div class="links__item">SKILLS</div>
-      <div class="links__item">EXPERIENCE</div>
-      <div class="links__item">SKILLS</div>
-      <div class="links__item">SKILLS</div>
+      <div class="links__item" v-for="(link, index) in data.about.links" :key="index">
+        {{ link.text }}
+      </div>
     </div>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { data } from '@/constants';
+</script>
 <style lang="scss" scoped>
 .about {
   height: 100vh;
   font-size: 14px;
-
   @include flexCenter;
-  animation: 0.8s fade-in;
+  animation: 1s fade-in;
 
   .text {
     margin-right: 160px;
@@ -51,7 +51,7 @@
       &:hover {
         cursor: pointer;
         color: $white;
-        animation: 0.8s link-hover;
+        animation: 0.8s link-hover both;
       }
     }
   }
