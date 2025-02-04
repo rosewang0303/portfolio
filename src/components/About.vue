@@ -8,10 +8,10 @@
       </div>
     </div>
     <div class="links">
-      <div class="links__item">SKILL</div>
-      <div class="links__item">SKILL</div>
-      <div class="links__item">SKILL</div>
-      <div class="links__item">SKILL</div>
+      <div class="links__item">SKILLS</div>
+      <div class="links__item">EXPERIENCE</div>
+      <div class="links__item">SKILLS</div>
+      <div class="links__item">SKILLS</div>
     </div>
   </div>
 </template>

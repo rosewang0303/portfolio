@@ -29,7 +29,7 @@
     &__logo {
       font-size: 20px;
       margin-bottom: 40px;
-      transform: rotate(-90deg);
+      writing-mode: vertical-lr;
     }
     &__line {
       width: 0.5px;
@@ -39,6 +39,9 @@
   }
 
   .links {
+    @include flexCenter;
+    flex-direction: column;
+
     &__item {
       width: 24px;
       height: 24px;
