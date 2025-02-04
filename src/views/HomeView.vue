@@ -33,7 +33,7 @@ onMounted(() => {
   &__content {
     width: 90vw;
     overflow-y: auto;
-    // position: fixed;
+    margin-left: 10vw;
   }
 }
 </style>

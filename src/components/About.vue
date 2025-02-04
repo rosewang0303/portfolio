@@ -20,22 +20,26 @@
 .about {
   height: 100vh;
   font-size: 14px;
-  font-family: 'Montserrat';
+
   @include flexCenter;
   animation: 0.8s fade-in;
 
   .text {
     margin-right: 160px;
+
     &__name {
       font-size: 16px;
       font-weight: bold;
       margin-bottom: 20px;
+      font-family: 'Montserrat';
     }
     &__title {
       margin-bottom: 20px;
+      font-family: 'Montserrat';
     }
     &__introduce {
       max-width: 282px;
+      font-family: 'Montserrat';
     }
   }
   .links {
