@@ -1,4 +1,4 @@
-import type { LoadingType, AboutType, SkillsType } from '@/types';
+import type { LoadingType, AboutType, SkillsType, ExperienceType } from '@/types';
 
 export const loading: LoadingType = {
   name: 'ROSE WANG',
@@ -48,6 +48,28 @@ export const skills: SkillsType = {
     {
       name: 'OTHERS',
       skill: ['Figma', 'PS、AI', '', 'Web3.js、Solidity', 'Phaser.js', '', 'iOS APP (Swift)'],
+    },
+  ],
+};
+
+export const experience: ExperienceType = {
+  title: 'EXPERIENCE',
+  subTitle: '(6+y)',
+  description:
+    '超過6年的軟體工作經驗，大四時爭取到系上唯一的實習名額開始踏入職場，從資管系畢業後持續在軟體業累積經驗，進入新創公司從零到一開發了多項產品上線，也到過大公司多人協作開發專案和維護系統。',
+  works: [
+    {
+      title: '前端工程師',
+      company: '新加坡商競舞電競有限公司 (Garena)',
+      time: '2022/04 ~ Present (2y9m)',
+      project: [
+        '遊戲行銷官網、遊戲內營收網頁、後台管理系統',
+        'RWD前端網頁、in app web view 前端開發',
+        '大量資料渲染優化',
+        '高互動網頁遊戲',
+        '動畫、音效處理',
+      ],
+      tags: ['Vue.js', 'Nuxt.js'],
     },
   ],
 };

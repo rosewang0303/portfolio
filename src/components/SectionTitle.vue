@@ -3,6 +3,7 @@
     <h1>
       <span class="section-title__deco">//</span>
       <span class="section-title__title">{{ props.title }}</span>
+      <span v-if="props.subTitle" class="section-title__sub-title">{{ props.subTitle }}</span>
     </h1>
     <p class="section-title__description">{{ props.description }}</p>
   </div>
@@ -11,6 +12,7 @@
 const props = defineProps<{
   title: string;
   description: string;
+  subTitle?: string;
 }>();
 </script>
 <style lang="scss" scoped>
@@ -21,6 +23,10 @@ const props = defineProps<{
   }
   &__title {
     font-size: 40px;
+  }
+  &__sub-title {
+    font-size: 24px;
+    margin-left: 36px;
   }
   &__description {
     font-size: 16px;

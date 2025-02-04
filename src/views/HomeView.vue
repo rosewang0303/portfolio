@@ -2,13 +2,14 @@
   <Loading v-if="isLoading" />
   <main v-else class="home">
     <NavLeft class="home__nav-left" />
-    <div class="home__content"><About /><Skills /></div>
+    <div class="home__content"><About /><Skills /><Experience /></div>
   </main>
 </template>
 <script setup lang="ts">
 import Loading from '@/components/Loading.vue';
 import About from '@/components/About.vue';
 import Skills from '@/components/Skills.vue';
+import Experience from '@/components/Experience.vue';
 import NavLeft from '@/components/NavLeft.vue';
 import { onMounted, ref } from 'vue';
 
