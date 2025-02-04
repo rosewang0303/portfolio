@@ -1,0 +1,50 @@
+<template>
+  <div class="nav-left">
+    <div class="top">
+      <div class="top__logo">ROSE</div>
+      <div class="top__line"></div>
+    </div>
+    <div class="links">
+      <div class="links__item"></div>
+      <div class="links__item"></div>
+      <div class="links__item"></div>
+    </div>
+  </div>
+</template>
+<script setup lang="ts"></script>
+<style lang="scss" scoped>
+.nav-left {
+  height: 100vh;
+  border-right: 0.5px solid $white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 60px 0;
+
+  .top {
+    @include flexCenter;
+    flex-direction: column;
+
+    &__logo {
+      font-size: 20px;
+      margin-bottom: 40px;
+      transform: rotate(-90deg);
+    }
+    &__line {
+      width: 0.5px;
+      height: 200px;
+      background-color: $white;
+    }
+  }
+
+  .links {
+    &__item {
+      width: 24px;
+      height: 24px;
+      margin-top: 16px;
+      background-color: $gray; // TODO remove
+    }
+  }
+}
+</style>
