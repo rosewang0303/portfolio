@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about-me">
     <div class="text">
       <div class="text__name">{{ data.about.name }}</div>
       <div class="text__title">{{ data.about.title }}</div>
@@ -18,7 +18,7 @@
 import { data } from '@/constants';
 </script>
 <style lang="scss" scoped>
-.about {
+.about-me {
   height: 100vh;
   font-size: 14px;
   @include flexCenter;
@@ -43,10 +43,15 @@ import { data } from '@/constants';
     }
   }
   .links {
+    color: $white;
+
+    &:hover {
+      color: $gray;
+    }
+
     &__item {
       font-size: 100px;
       margin-bottom: 8px;
-      color: $gray;
 
       &:hover {
         cursor: pointer;
