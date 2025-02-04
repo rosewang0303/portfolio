@@ -1,11 +1,11 @@
 <template>
   <div class="loading-bg">
-    <div class="loading-bg__name">{{ data.loading.name }}</div>
-    <div class="loading-bg__title">{{ data.loading.title }}</div>
+    <div class="loading-bg__name">{{ loading.name }}</div>
+    <div class="loading-bg__title">{{ loading.title }}</div>
   </div>
 </template>
 <script setup lang="ts">
-import { data } from '@/constants';
+import { loading } from '@/data';
 </script>
 <style lang="scss" scoped>
 .loading-bg {

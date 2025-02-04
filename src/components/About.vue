@@ -1,26 +1,25 @@
 <template>
   <div class="about-me">
     <div class="text">
-      <div class="text__name">{{ data.about.name }}</div>
-      <div class="text__title">{{ data.about.title }}</div>
+      <div class="text__name">{{ about.name }}</div>
+      <div class="text__title">{{ about.title }}</div>
       <div class="text__introduce">
-        {{ data.about.introduce }}
+        {{ about.introduce }}
       </div>
     </div>
     <div class="links">
-      <div class="links__item" v-for="(link, index) in data.about.links" :key="index">
+      <div class="links__item" v-for="(link, index) in about.links" :key="index">
         {{ link.text }}
       </div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import { data } from '@/constants';
+import { about } from '@/data';
 </script>
 <style lang="scss" scoped>
 .about-me {
   height: 100vh;
-  font-size: 14px;
   @include flexCenter;
   animation: 1s fade-in;
 
