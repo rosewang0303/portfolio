@@ -55,6 +55,7 @@ watch(
     color: $black;
     background-color: $white;
     border-radius: 4px;
+    margin-bottom: 12px;
     cursor: pointer;
 
     &__left {
@@ -87,19 +88,17 @@ watch(
     }
   }
   .content {
-    margin-top: 12px;
     height: 0px;
     overflow: hidden;
     cursor: pointer;
 
     &--open {
-      height: auto;
       padding: 16px 20px;
       border: $white solid 0.5px;
       border-radius: 4px;
+      height: 100%;
       transition: 0.3s height ease;
     }
-
     &__projects {
       div {
         position: relative;
