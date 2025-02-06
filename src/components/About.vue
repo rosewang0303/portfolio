@@ -2,7 +2,7 @@
   <div class="about-me">
     <div class="text">
       <div class="text__name">{{ about.name }}</div>
-      <div class="text__title">{{ about.title }}</div>
+      <div class="text__title">{{ about.position }}</div>
       <div class="text__introduce">
         {{ about.introduce }}
       </div>

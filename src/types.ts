@@ -1,6 +1,6 @@
 export interface LoadingType {
   name: string;
-  title: string;
+  position: string;
 }
 
 export interface AboutType {
@@ -17,7 +17,7 @@ export interface SkillsType {
 }
 
 export interface ExperienceItemType {
-  title: string;
+  position: string;
   company: string;
   time: string;
   project: Array<string>;
