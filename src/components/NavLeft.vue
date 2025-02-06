@@ -30,6 +30,7 @@
       font-size: 20px;
       margin-bottom: 40px;
       writing-mode: vertical-lr;
+      cursor: pointer;
     }
     &__line {
       width: 0.5px;
@@ -46,7 +47,17 @@
       width: 24px;
       height: 24px;
       margin-top: 16px;
-      background-color: $gray; // TODO remove
+      cursor: pointer;
+
+      &:nth-child(1) {
+        background-image: url('/assets/icon/github.svg');
+      }
+      &:nth-child(2) {
+        background-image: url('/assets/icon/codepen.svg');
+      }
+      &:nth-child(3) {
+        background-image: url('/assets/icon/linkin.svg');
+      }
     }
   }
 }
