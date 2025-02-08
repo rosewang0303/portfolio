@@ -1,8 +1,16 @@
-import type { LoadingType, AboutType, SkillsType, ExperienceType } from '@/types';
+import type { LoadingType, navLeftType, AboutType, SkillsType, ExperienceType } from '@/types';
 
 export const loading: LoadingType = {
   name: 'ROSE WANG',
   position: 'Front-End Engineer / Software Engineer',
+};
+
+export const navLeft: navLeftType = {
+  links: [
+    { url: '', img: '/assets/icon/github.svg' },
+    { url: '', img: '/assets/icon/codepen.svg' },
+    { url: '', img: '/assets/icon/linkin.svg' },
+  ],
 };
 
 export const about: AboutType = {

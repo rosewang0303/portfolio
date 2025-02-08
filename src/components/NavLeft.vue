@@ -5,20 +5,24 @@
       <div class="top__line"></div>
     </div>
     <div class="links">
-      <div class="links__item"></div>
-      <div class="links__item"></div>
-      <div class="links__item"></div>
+      <div
+        class="links__item"
+        v-for="(item, index) in navLeft.links"
+        :style="{ backgroundImage: `url(${item.img})` }"
+        :key="index"
+      ></div>
     </div>
   </div>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { navLeft } from '@/data';
+</script>
 <style lang="scss" scoped>
 .nav-left {
   height: 100vh;
   border-right: 0.5px solid $white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   flex-direction: column;
   padding: 60px 0;
 
@@ -28,7 +32,6 @@
 
     &__logo {
       font-size: 20px;
-      margin-bottom: 40px;
       writing-mode: vertical-lr;
       cursor: pointer;
     }
@@ -36,6 +39,7 @@
       width: 0.5px;
       height: 200px;
       background-color: $white;
+      margin: 40px 0;
     }
   }
 
@@ -46,18 +50,8 @@
     &__item {
       width: 24px;
       height: 24px;
-      margin-top: 16px;
+      margin-bottom: 16px;
       cursor: pointer;
-
-      &:nth-child(1) {
-        background-image: url('/assets/icon/github.svg');
-      }
-      &:nth-child(2) {
-        background-image: url('/assets/icon/codepen.svg');
-      }
-      &:nth-child(3) {
-        background-image: url('/assets/icon/linkin.svg');
-      }
     }
   }
 }
