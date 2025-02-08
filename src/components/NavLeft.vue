@@ -46,6 +46,17 @@ import { navLeft } from '@/data';
   .links {
     @include flexCenter;
     flex-direction: column;
+    filter: brightness(1);
+
+    &:hover {
+      .links__item {
+        filter: brightness(0.5);
+
+        &:hover {
+          filter: brightness(1);
+        }
+      }
+    }
 
     &__item {
       width: 24px;
