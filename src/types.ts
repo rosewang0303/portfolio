@@ -9,7 +9,7 @@ export interface navLeftType {
 
 export interface AboutType {
   name: string;
-  title: string;
+  position: string;
   introduce: string;
   links: Array<{ text: string; link: string }>;
 }

@@ -15,7 +15,7 @@ export const navLeft: navLeftType = {
 
 export const about: AboutType = {
   name: 'ROSE WANG',
-  title: 'Front-End Engineer / Software Engineer',
+  position: 'Front-End Engineer / Software Engineer',
   introduce:
     '超過6年的程式開發經驗，擅長前後端網頁開發，目前專注於前端領域，喜歡學習新事物，勇於嘗試挑戰，利用程式解決生活中的痛點。',
   links: [
@@ -34,11 +34,11 @@ export const skills: SkillsType = {
     {
       name: 'FRONT-END',
       skill: [
-        'Vue.js / Nuxt.js (SSR)',
+        '<span>Vue.js / Nuxt.js (SSR)</span>',
         '',
-        'RWD / In-APP-Webview',
-        'SASS (SCSS) / Tailwind',
-        'Javascript (ES6+) / TypeScript',
+        '<span>RWD / In-APP-Webview</span>',
+        '<span>SASS (SCSS) / Tailwind</span>',
+        '<span>Javascript (ES6+) / TypeScript</span>',
         '',
         'LINE Front-end Framework (LIFF)',
         'Google Chrome Extension',
