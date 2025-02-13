@@ -18,7 +18,7 @@
         <div v-for="(item, index) in props.project" :key="index">{{ item }}</div>
       </div>
       <div class="content__tags">
-        <span v-for="(item, index) in props.tags" :key="index">{{ item }}</span>
+        <TagItem v-for="(item, index) in props.tags" :key="index" :text="item" />
       </div>
     </div>
   </div>
@@ -26,6 +26,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import type { ExperienceItemType } from '@/types';
+import TagItem from '@/components/TagItem.vue';
 
 interface ExperienceItemProps extends ExperienceItemType {
   collapse: boolean;
@@ -112,15 +113,8 @@ watch(
       }
     }
     &__tags {
-      margin-top: 20px;
-
-      span {
-        font-size: 14px;
-        padding: 4px 12px;
-        border: solid $white 0.5px;
-        border-radius: 30px;
-        margin-right: 12px;
-      }
+      display: flex;
+      margin-top: 28px;
     }
   }
 }

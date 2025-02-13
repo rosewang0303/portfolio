@@ -8,7 +8,7 @@
       />
       <div class="experience__items">
         <ExperienceItem
-          v-for="(item, index) in experience.works"
+          v-for="(item, index) in experience.list"
           :key="index"
           :position="item.position"
           :company="item.company"
@@ -18,7 +18,6 @@
           :collapse="index === openIdx"
           @click="openIdx = index"
         />
-        >
       </div>
     </div>
   </div>

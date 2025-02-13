@@ -23,7 +23,7 @@
             </div>
           </div>
         </div>
-        <div class="item item-wrap">
+        <div class="item">
           <div class="item__title">{{ skills.items[3].name }}</div>
           <div v-for="(item, index) in skills.items[3].skill" :key="index">
             <div class="item__text" v-html="item"></div>

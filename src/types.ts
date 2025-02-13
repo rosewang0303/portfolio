@@ -31,5 +31,16 @@ export interface ExperienceType {
   title: string;
   subTitle: string;
   description: string;
-  works: Array<ExperienceItemType>;
+  list: Array<ExperienceItemType>;
+}
+
+export interface WorksItemType {
+  name: string;
+  skills: Array<string>;
+  tags: Array<string>;
+}
+export interface WorksType {
+  title: string;
+  description: string;
+  projects: Array<WorksItemType>;
 }
