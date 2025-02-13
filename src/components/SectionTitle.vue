@@ -34,6 +34,7 @@ const props = defineProps<{
     font-weight: lighter;
     max-width: 940px;
     margin-top: 28px;
+    text-align: justify;
   }
 }
 </style>

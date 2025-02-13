@@ -5,12 +5,14 @@
       <div class="top__line"></div>
     </div>
     <div class="links">
-      <div
+      <a
         class="links__item"
         v-for="(item, index) in navLeft.links"
-        :style="{ backgroundImage: `url(${item.img})` }"
         :key="index"
-      ></div>
+        :style="{ backgroundImage: `url(${item.img})` }"
+        :href="item.url"
+        target="_blank"
+      ></a>
     </div>
   </div>
 </template>

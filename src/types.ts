@@ -3,8 +3,8 @@ export interface LoadingType {
   position: string;
 }
 
-export interface navLeftType {
-  links: Array<{ url: string; img: string }>;
+export interface NavLeftType {
+  links: Array<{ img: string; url: string }>;
 }
 
 export interface AboutType {

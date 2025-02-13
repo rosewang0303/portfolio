@@ -1,15 +1,28 @@
-import type { LoadingType, navLeftType, AboutType, SkillsType, ExperienceType } from '@/types';
+import type { LoadingType, NavLeftType, AboutType, SkillsType, ExperienceType } from '@/types';
 
 export const loading: LoadingType = {
   name: 'ROSE WANG',
   position: 'Front-End Engineer / Software Engineer',
 };
 
-export const navLeft: navLeftType = {
+export const navLeft: NavLeftType = {
   links: [
-    { url: '', img: '/assets/icon/github.svg' },
-    { url: '', img: '/assets/icon/codepen.svg' },
-    { url: '', img: '/assets/icon/linkin.svg' },
+    {
+      url: 'https://github.com/rosewang0303',
+      img: '/assets/icon/github.svg',
+    },
+    {
+      url: 'https://codepen.io/rosewang0303',
+      img: '/assets/icon/codepen.svg',
+    },
+    {
+      url: 'https://www.linkedin.com/in/rose-wang-9577631b8/',
+      img: '/assets/icon/linkin.svg',
+    },
+    {
+      url: 'mailto:rosewang0303@gmail.com?subject=[Rose作品集] 回覆聯絡',
+      img: 'assets/icon/envelope.svg',
+    },
   ],
 };
 
@@ -29,12 +42,12 @@ export const about: AboutType = {
 export const skills: SkillsType = {
   title: 'SKILLS',
   description:
-    '從全端網頁開發到專注前端領域上，不斷學習新技術，從最初踏入前端世界的 jQuery、Bootstrap，到使用前端框架 Vue.js。因為對設計和美術的興趣累積了不少設計美感，也會 Figma 和 PS、AI 的基本操作。除了前端領域，也開發過後端 PHP、Java、C# 專案，在軟體開發路上也勇於嘗試其他領域，像是區塊鏈撰寫智能合約 Solidity 和 Web3.js 串接，iOS APP 從設計、開發到上架，用 Google Chrome Extension 開發小工具等等。',
+    '從全端網頁開發到專注前端領域上，不斷學習新技術，從最初踏入前端世界的 jQuery / Bootstrap，到使用前端框架 Vue.js、React.js 到 SSR。因為對設計和美術的興趣累積了不少設計美感，也會 Figma 和 PS / AI 的基本操作。除了前端領域，也開發過後端 PHP / Java / C# 專案，在軟體開發路上也勇於嘗試其他領域，像是區塊鏈撰寫智能合約 Solidity 和 Web3.js 串接，iOS APP 從設計 / 開發到上架，用 Google Chrome Extension 開發小工具等等。',
   items: [
     {
       name: 'FRONT-END',
       skill: [
-        '<span>Vue.js / Nuxt.js (SSR)</span>',
+        '<span>Vue.js / Nuxt.js (SSR) / React.js</span>',
         '',
         '<span>RWD / In-APP-Webview</span>',
         '<span>SASS (SCSS) / Tailwind</span>',
@@ -45,17 +58,29 @@ export const skills: SkillsType = {
         '',
         'Vite',
         'Webpack',
-        'Yarn、bun、npm',
+        'Yarn / bun / npm',
         '',
         'jQuery',
         'Bootstrap',
       ],
     },
     { name: 'BACK-END', skill: ['Node.js (Express)', 'PHP (Laravel)', '', 'mySQL'] },
-    { name: '協作開發', skill: ['Git', '', 'Figma、Zeplin', '', 'Jira'] },
+    {
+      name: '協作開發',
+      skill: ['Git (Github / Gitlab)', '', 'Figma / Zeplin / Sketch', '', 'Jira'],
+    },
     {
       name: 'OTHERS',
-      skill: ['Figma', 'PS、AI', '', 'Web3.js、Solidity', 'Phaser.js', '', 'iOS APP (Swift)'],
+      skill: [
+        'Figma',
+        'PS / AI',
+        '',
+        'Web3.js / Solidity',
+        '',
+        'Phaser.js / Chart.js',
+        '',
+        'iOS APP (Swift)',
+      ],
     },
   ],
 };
@@ -71,12 +96,12 @@ export const experience: ExperienceType = {
       company: '@新加坡商競舞電競有限公司 (Garena)',
       time: '2022/04 ~ Present (2y9m)',
       project: [
-        '開發遊戲行銷官網、遊戲內營收網頁、後台管理系統',
-        'RWD前端網頁、In APP webview 前端開發',
+        '開發遊戲行銷官網 / 遊戲內營收網頁 / 後台管理系統',
+        'RWD前端網頁 / In APP webview 前端開發',
         '大量資料渲染優化',
         'API 對接',
         '高互動網頁遊戲',
-        '動畫、音效處理',
+        '動畫 / 音效處理',
       ],
       tags: ['Vue.js', 'Nuxt.js'],
     },
@@ -85,7 +110,7 @@ export const experience: ExperienceType = {
       company: '@紫洣科技股份有限公司',
       time: '2022/04 ~2019/12 (2y5m)',
       project: [
-        '開發電商官網、區塊鏈產品官網、後台系統',
+        '開發電商官網 / 區塊鏈產品官網 / 後台系統',
         'RWD前端網頁',
         '資料庫建置，後端 API 開發',
         '撰寫區塊鏈智能合約上鏈',
@@ -97,14 +122,14 @@ export const experience: ExperienceType = {
       position: '全端工程師',
       company: '@諾亞克科技股份有限公司',
       time: '2019/07~2018/08 (1y)',
-      project: ['開發長照系統、公托系統、醫療設備 APP', '資料庫建置，後端 API 開發'],
+      project: ['開發長照系統 / 公托系統 / 醫療設備 APP', '資料庫建置，後端 API 開發'],
       tags: ['PHP (Laravel)', 'C# (.Net Framework)'],
     },
     {
       position: '程式設計實習生',
       company: '@國泰人壽保險股份有限公司',
       time: '2018/06~2018/02 (5m)',
-      project: ['開發金融後台系統、部門內部工具', '模組開發', '後端 API 開發', '前台前端開發'],
+      project: ['開發金融後台系統 / 部門內部工具', '模組開發', '後端 API 開發', '前台前端開發'],
       tags: ['Java', 'Jquery'],
     },
   ],
