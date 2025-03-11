@@ -38,6 +38,8 @@ export interface WorksItemType {
   name: string;
   skills: Array<string>;
   tags: Array<string>;
+  img: string;
+  link?: string;
 }
 export interface WorksType {
   title: string;

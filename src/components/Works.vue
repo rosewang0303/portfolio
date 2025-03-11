@@ -9,6 +9,8 @@
           :name="item.name"
           :skills="item.skills"
           :tags="item.tags"
+          :img="item.img"
+          :link="item.link"
         />
       </div>
     </div>

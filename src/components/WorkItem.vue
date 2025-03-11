@@ -13,9 +13,9 @@
         </div>
       </div>
     </div>
-    <div class="right">
-      <img class="right__image" :src="''" />
-    </div>
+    <a :href="props.link" target="_blank" class="right" :class="['right', { effect: props.link }]">
+      <img class="right__image" :src="props.img" />
+    </a>
   </div>
 </template>
 <script setup lang="ts">
@@ -43,6 +43,7 @@ const props = defineProps<WorksItemType>();
     &__name {
       font-size: 18px;
       margin-bottom: 20px;
+      color: $highlight;
     }
     &__skills {
       div {
@@ -61,11 +62,22 @@ const props = defineProps<WorksItemType>();
     }
   }
   .right {
+    width: 330px;
+    height: 247px;
+    overflow: hidden;
+
+    &.effect {
+      &:hover {
+        .right__image {
+          transition: 0.3s all ease;
+          transform: scale(1.2);
+        }
+      }
+    }
+
     &__image {
       width: 330px;
       height: 247px;
-      border: 0.5px solid $gray;
-      background-color: $dark-gray;
     }
   }
 }
