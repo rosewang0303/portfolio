@@ -1,5 +1,5 @@
 <template>
-  <div class="about-me">
+  <div class="about">
     <div class="text">
       <div class="text__name">{{ about.name }}</div>
       <div class="text__title">{{ about.position }}</div>
@@ -18,7 +18,7 @@
 import { about } from '@/data';
 </script>
 <style lang="scss" scoped>
-.about-me {
+.about {
   height: 100vh;
   @include flexCenter;
   animation: 1s fade-in;
@@ -74,6 +74,17 @@ import { about } from '@/data';
     }
     to {
       opacity: 1;
+    }
+  }
+
+  @include mobile {
+    flex-direction: column;
+
+    .text {
+      margin-right: unset;
+    }
+    .links {
+      display: none;
     }
   }
 }

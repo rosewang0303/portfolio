@@ -1,12 +1,18 @@
 <template>
   <div class="nav-left">
+    <div class="close" @click="emit('close')">x</div>
     <div class="top">
       <div class="top__logo">ROSE</div>
       <div class="top__line"></div>
     </div>
-    <div class="links">
+    <div class="about-links">
+      <div class="about-links__item" v-for="(link, index) in about.links" :key="index">
+        {{ link.text }}
+      </div>
+    </div>
+    <div class="contact-links">
       <a
-        class="links__item"
+        class="contact-links__item"
         v-for="(item, index) in navLeft.links"
         :key="index"
         :style="{ backgroundImage: `url(${item.img})` }"
@@ -17,7 +23,9 @@
   </div>
 </template>
 <script setup lang="ts">
-import { navLeft } from '@/data';
+import { navLeft, about } from '@/data';
+
+const emit = defineEmits(['close']);
 </script>
 <style lang="scss" scoped>
 .nav-left {
@@ -32,6 +40,9 @@ import { navLeft } from '@/data';
     @include flexCenter;
     flex-direction: column;
 
+    .close {
+      display: none;
+    }
     &__logo {
       font-size: 20px;
       writing-mode: vertical-lr;
@@ -44,8 +55,10 @@ import { navLeft } from '@/data';
       margin: 40px 0;
     }
   }
-
-  .links {
+  .about-links {
+    display: none;
+  }
+  .contact-links {
     @include flexCenter;
     flex-direction: column;
     filter: brightness(1);
@@ -65,6 +78,49 @@ import { navLeft } from '@/data';
       height: 24px;
       margin-bottom: 16px;
       cursor: pointer;
+    }
+  }
+  @include mobile {
+    background-color: $black;
+    justify-content: space-between;
+    padding: 0;
+
+    .close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      display: block;
+      font-size: 32px;
+    }
+    .top {
+      width: 100vw;
+      margin-top: 20px;
+      position: relative;
+
+      &__logo {
+        writing-mode: unset;
+      }
+      &__line {
+        display: none;
+      }
+    }
+    .contact-links {
+      flex-direction: row;
+      margin-bottom: 100px;
+
+      &__item {
+        margin-bottom: unset;
+        margin: 0 12px;
+      }
+    }
+    .about-links {
+      display: block;
+      text-align: center;
+
+      &__item {
+        font-size: 28px;
+        margin-bottom: 20px;
+      }
     }
   }
 }
