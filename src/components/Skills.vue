@@ -46,16 +46,16 @@ import { skills } from '@/data';
   &__wrap {
     display: flex;
     flex-direction: column;
+    width: $pc-section-content-width;
   }
   &__items {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 80px;
   }
 
   .item-wrap {
-    margin-right: 160px;
-
     .item {
       &:nth-child(2) {
         margin-top: 40px;
@@ -78,6 +78,15 @@ import { skills } from '@/data';
         font-family: 'Montserrat';
         min-height: 22px;
       }
+    }
+  }
+
+  @include mobile {
+    &__wrap {
+      width: 100%;
+    }
+    &__items {
+      flex-direction: column;
     }
   }
 }

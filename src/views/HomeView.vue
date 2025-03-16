@@ -1,9 +1,10 @@
 <template>
   <Loading v-if="isLoading" />
   <main v-else class="home">
+    <TopBar @on-click="isNavOpen = !isNavOpen" />
     <NavLeft
       :class="['home__nav-left', { 'home__nav-left--open': isNavOpen }]"
-      @close="isNavOpen = false"
+      @on-close="isNavOpen = false"
     />
     <div :class="['home__content', { 'home__content--open': !isNavOpen }]">
       <About /><Skills /><Experience /><Works />
@@ -17,10 +18,11 @@ import Skills from '@/components/Skills.vue';
 import Experience from '@/components/Experience.vue';
 import Works from '@/components/Works.vue';
 import NavLeft from '@/components/NavLeft.vue';
+import TopBar from '@/components/TopBar.vue';
 import { onMounted, ref } from 'vue';
 
 const isLoading = ref(true);
-const isNavOpen = ref(true);
+const isNavOpen = ref(false);
 
 onMounted(() => {
   setTimeout(() => {
@@ -43,6 +45,8 @@ onMounted(() => {
     width: 90vw;
     overflow-y: auto;
     margin-left: 10vw;
+    padding: $pc-container-padding;
+    overflow: hidden;
   }
 
   @include mobile {
@@ -59,6 +63,7 @@ onMounted(() => {
       width: 100vw;
       margin-left: unset;
       display: none;
+      padding: $mobile-container-padding;
 
       &--open {
         display: block;

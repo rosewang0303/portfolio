@@ -12,6 +12,7 @@ const props = defineProps<{ text: string }>();
   padding: 4px 12px;
   border: solid $white 0.5px;
   border-radius: 30px;
+  margin-top: 8px;
   margin-right: 12px;
 }
 </style>

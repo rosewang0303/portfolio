@@ -1,15 +1,17 @@
 <template>
   <div class="about">
-    <div class="text">
-      <div class="text__name">{{ about.name }}</div>
-      <div class="text__title">{{ about.position }}</div>
-      <div class="text__introduce">
-        {{ about.introduce }}
+    <div class="about__wrap">
+      <div class="text">
+        <div class="text__name">{{ about.name }}</div>
+        <div class="text__title">{{ about.position }}</div>
+        <div class="text__introduce">
+          {{ about.introduce }}
+        </div>
       </div>
-    </div>
-    <div class="links">
-      <div class="links__item" v-for="(link, index) in about.links" :key="index">
-        {{ link.text }}
+      <div class="links">
+        <div class="links__item" v-for="(link, index) in about.links" :key="index">
+          {{ link.text }}
+        </div>
       </div>
     </div>
   </div>
@@ -19,13 +21,19 @@ import { about } from '@/data';
 </script>
 <style lang="scss" scoped>
 .about {
-  height: 100vh;
   @include flexCenter;
+  flex-direction: column;
   animation: 1s fade-in;
 
+  &__wrap {
+    height: 100vh;
+    width: $pc-section-content-width;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
   .text {
-    margin-right: 160px;
-
     &__name {
       font-size: 16px;
       font-weight: bold;
@@ -35,10 +43,12 @@ import { about } from '@/data';
     &__title {
       margin-bottom: 20px;
       font-family: 'Montserrat';
+      font-weight: 300;
     }
     &__introduce {
       max-width: 282px;
       font-family: 'Montserrat';
+      text-align: justify;
     }
   }
   .links {
@@ -49,7 +59,7 @@ import { about } from '@/data';
     }
 
     &__item {
-      font-size: 100px;
+      font-size: 88px;
       margin-bottom: 8px;
 
       &:hover {
@@ -78,10 +88,17 @@ import { about } from '@/data';
   }
 
   @include mobile {
-    flex-direction: column;
-
+    &__wrap {
+      width: 100%;
+      justify-content: center;
+    }
     .text {
-      margin-right: unset;
+      text-align: center;
+
+      &__introduce {
+        max-width: unset;
+        text-align: justify;
+      }
     }
     .links {
       display: none;

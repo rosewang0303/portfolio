@@ -1,5 +1,5 @@
 <template>
-  <div class="work-item">
+  <a class="work-item" :href="props.link" target="_blank">
     <div class="left">
       <div>
         <div class="left__name">{{ props.name }}</div>
@@ -13,10 +13,10 @@
         </div>
       </div>
     </div>
-    <a :href="props.link" target="_blank" class="right" :class="['right', { effect: props.link }]">
+    <div class="right">
       <img class="right__image" :src="props.img" />
-    </a>
-  </div>
+    </div>
+  </a>
 </template>
 <script setup lang="ts">
 import type { WorksItemType } from '@/types';
@@ -30,6 +30,7 @@ const props = defineProps<WorksItemType>();
   border-top: solid 0.5px $gray;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 
   &:last-child {
     border-bottom: solid 0.5px $gray;
@@ -53,12 +54,14 @@ const props = defineProps<WorksItemType>();
         &::after {
           content: '-';
           position: absolute;
+          top: 0;
           left: 0;
         }
       }
     }
     &__tags {
       display: flex;
+      flex-wrap: wrap;
     }
   }
   .right {
@@ -66,18 +69,31 @@ const props = defineProps<WorksItemType>();
     height: 247px;
     overflow: hidden;
 
-    &.effect {
-      &:hover {
-        .right__image {
-          transition: 0.3s all ease;
-          transform: scale(1.2);
-        }
-      }
-    }
-
     &__image {
       width: 330px;
       height: 247px;
+    }
+  }
+
+  @include mobile {
+    flex-direction: column-reverse;
+
+    .left {
+      &__name {
+        margin-top: 20px;
+      }
+      &__tags {
+        margin-top: 20px;
+      }
+    }
+    .right {
+      width: 100%;
+      height: unset;
+
+      &__image {
+        width: calc(100vw - 20px * 2);
+        height: calc(247 * 100vw / 330);
+      }
     }
   }
 }

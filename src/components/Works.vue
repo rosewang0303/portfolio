@@ -30,9 +30,16 @@ import { works } from '@/data';
   &__wrap {
     display: flex;
     flex-direction: column;
+    width: $pc-section-content-width;
   }
   &__projects {
     margin-top: 80px;
+  }
+
+  @include mobile {
+    &__wrap {
+      width: 100%;
+    }
   }
 }
 </style>

@@ -68,6 +68,7 @@ watch(
       margin-right: 4px;
     }
     &__company {
+      font-weight: 300;
     }
     &__right {
       display: flex;
@@ -114,7 +115,36 @@ watch(
     }
     &__tags {
       display: flex;
+      flex-wrap: wrap;
       margin-top: 28px;
+    }
+  }
+
+  @include mobile {
+    .title {
+      display: block;
+      position: relative;
+
+      &__left {
+        display: block;
+      }
+      &__position {
+        margin-right: unset;
+      }
+      &__right {
+        justify-content: space-between;
+      }
+      &__icon {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    .content {
+      &__tags {
+        margin-top: 12px;
+      }
     }
   }
 }

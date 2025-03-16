@@ -1,6 +1,6 @@
 <template>
   <div class="nav-left">
-    <div class="close" @click="emit('close')">x</div>
+    <div class="close" @click="emit('onClose')">x</div>
     <div class="top">
       <div class="top__logo">ROSE</div>
       <div class="top__line"></div>
@@ -25,7 +25,7 @@
 <script setup lang="ts">
 import { navLeft, about } from '@/data';
 
-const emit = defineEmits(['close']);
+const emit = defineEmits(['onClose']);
 </script>
 <style lang="scss" scoped>
 .nav-left {
@@ -36,13 +36,13 @@ const emit = defineEmits(['close']);
   flex-direction: column;
   padding: 60px 0;
 
+  .close {
+    display: none;
+  }
   .top {
     @include flexCenter;
     flex-direction: column;
 
-    .close {
-      display: none;
-    }
     &__logo {
       font-size: 20px;
       writing-mode: vertical-lr;
@@ -64,7 +64,7 @@ const emit = defineEmits(['close']);
     filter: brightness(1);
 
     &:hover {
-      .links__item {
+      .contact-links__item {
         filter: brightness(0.5);
 
         &:hover {

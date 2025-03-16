@@ -51,5 +51,14 @@ import { loading } from '@/data';
       display: none;
     }
   }
+
+  @include mobile {
+    &__name {
+      font-size: 40px;
+    }
+    &__title {
+      font-size: 12px;
+    }
+  }
 }
 </style>

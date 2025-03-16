@@ -17,6 +17,8 @@ const props = defineProps<{
 </script>
 <style lang="scss" scoped>
 .section-title {
+  width: 100%;
+
   &__deco {
     margin-right: 60px;
     font-size: 40px;
@@ -32,9 +34,17 @@ const props = defineProps<{
     font-size: 16px;
     font-family: 'Montserrat';
     font-weight: lighter;
-    max-width: 940px;
     margin-top: 28px;
     text-align: justify;
+  }
+
+  @include mobile {
+    &__deco {
+      margin-right: 10px;
+    }
+    &__sub-title {
+      margin-left: 10px;
+    }
   }
 }
 </style>

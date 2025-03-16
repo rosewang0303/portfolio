@@ -37,7 +37,7 @@ export const about: AboutType = {
   name: 'ROSE WANG',
   position: 'Front-End Engineer / Software Engineer',
   introduce:
-    '超過6年的程式開發經驗，擅長前後端網頁開發，目前專注於前端領域，喜歡學習新技術，勇於嘗試挑戰，利用程式解決生活中的痛點。',
+    '熱愛細節的前端工程師。最初涉略全端開發，在探索的過程中，發現前端世界的無限可能與樂趣，因此專注於前端技術的精進與創新。特別講究 Pixel Perfect，力求每個畫面都能完美呈現設計的細節，帶給使用者最佳體驗。',
   links: [
     { text: 'SKILLS', link: '#skills' },
     { text: 'EXPERIENCE', link: '#experience' },
@@ -98,7 +98,7 @@ export const experience: ExperienceType = {
   title: 'EXPERIENCE',
   subTitle: '(6+y)',
   description:
-    '超過6年的軟體工作經驗，大四時爭取到系上唯一的實習名額開始踏入職場，從資管系畢業後持續在軟體業累積經驗，進入大公司多人協作開發專案和維護系統，也在新創公司從零到一開發了多項產品上線。',
+    '擁有超過 6 年的軟體開發經驗，大學期間爭取到系上唯一的實習機會，正式踏入職場。自資訊管理系畢業後，持續深耕軟體產業，最初從事全端開發，累積前後端協作與系統設計經驗，後來專注於前端領域，精進技術與使用者體驗的最佳實踐。曾參與大型企業的多人協作開發與系統維護，也在新創公司從 0 到 1 開發並成功推動多項產品上線。',
   list: [
     {
       position: '前端工程師',
@@ -147,7 +147,7 @@ export const experience: ExperienceType = {
 export const works: WorksType = {
   title: 'WORKS',
   description:
-    '除了工作上的專案和產品外，閒暇時也會做 Side Project 來嘗試玩玩看新接觸的技術，或是解決生活上的痛點。因為對設計的興趣和過去後端的經驗，加上累積的前端技術，在做 Side Project 時.....',
+    '除了工作上累積的開發經驗，也熱衷於研究新技術，並喜歡把自己遇到的痛點轉化成 Side Project。憑藉過去的後端經驗，我能夠獨立完成全端開發，讓專案從 UI/UX 設計到功能實現都能完整落地，打造出兼具技術深度與良好體驗的作品。此外，我對設計有濃厚的興趣，雖然不是專業設計師，但我注重細節與美感，希望讓畫面既符合使用者體驗，也能呈現更好的視覺效果。',
   projects: [
     {
       name: 'Project Name',

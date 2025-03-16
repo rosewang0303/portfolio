@@ -40,12 +40,19 @@ const openIdx = ref(0);
   &__wrap {
     display: flex;
     flex-direction: column;
+    width: $pc-section-content-width;
   }
   &__items {
     margin-top: 80px;
 
     > div {
       margin-bottom: 20px;
+    }
+  }
+
+  @include mobile {
+    &__wrap {
+      width: 100%;
     }
   }
 }
