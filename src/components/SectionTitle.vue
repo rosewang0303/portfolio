@@ -2,16 +2,16 @@
   <div class="section-title">
     <h1>
       <span class="section-title__deco">//</span>
-      <span class="section-title__title">{{ props.title }}</span>
+      <span v-if="props.title" class="section-title__title">{{ props.title }}</span>
       <span v-if="props.subTitle" class="section-title__sub-title">{{ props.subTitle }}</span>
     </h1>
-    <p class="section-title__description">{{ props.description }}</p>
+    <p props.description class="section-title__description">{{ props.description }}</p>
   </div>
 </template>
 <script setup lang="ts">
 const props = defineProps<{
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   subTitle?: string;
 }>();
 </script>
@@ -34,7 +34,6 @@ const props = defineProps<{
     font-size: 16px;
     font-family: 'Montserrat';
     font-weight: lighter;
-    margin-top: 28px;
     text-align: justify;
   }
 

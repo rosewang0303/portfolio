@@ -1,45 +1,30 @@
 <template>
-  <div class="works">
-    <div class="works__wrap">
-      <SectionTitle :title="works.title" :description="works.description" />
-      <div class="works__projects">
-        <WorkItem
-          v-for="(item, index) in works.projects"
-          :key="index"
-          :name="item.name"
-          :skills="item.skills"
-          :tags="item.tags"
-          :img="item.img"
-          :link="item.link"
-        />
-      </div>
+  <Section class="works" :title="{ title: works.title, description: works.description }">
+    <div class="works__projects">
+      <WorkItem
+        v-for="(item, index) in works.projects"
+        :key="index"
+        :name="item.name"
+        :skills="item.skills"
+        :tags="item.tags"
+        :img="item.img"
+        :link="item.link"
+      />
     </div>
-  </div>
+  </Section>
 </template>
 <script setup lang="ts">
-import SectionTitle from '@/components/SectionTitle.vue';
+import Section from '@/components/Section.vue';
 import WorkItem from '@/components/WorkItem.vue';
 import { works } from '@/data';
 </script>
 <style lang="scss" scoped>
 .works {
-  @include flexCenter;
-  flex-direction: column;
-  padding-bottom: 120px;
-
-  &__wrap {
-    display: flex;
-    flex-direction: column;
-    width: $pc-section-content-width;
-  }
   &__projects {
-    margin-top: 80px;
+    width: 100%;
   }
 
   @include mobile {
-    &__wrap {
-      width: 100%;
-    }
   }
 }
 </style>

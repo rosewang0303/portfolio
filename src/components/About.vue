@@ -1,38 +1,29 @@
 <template>
-  <div class="about">
-    <div class="about__wrap">
-      <div class="text">
-        <div class="text__name">{{ about.name }}</div>
-        <div class="text__title">{{ about.position }}</div>
-        <div class="text__introduce">
-          {{ about.introduce }}
-        </div>
-      </div>
-      <div class="links">
-        <div class="links__item" v-for="(link, index) in about.links" :key="index">
-          {{ link.text }}
-        </div>
+  <Section class="about" :title="null">
+    <div class="text">
+      <div class="text__name">{{ about.name }}</div>
+      <div class="text__title">{{ about.position }}</div>
+      <div class="text__introduce">
+        {{ about.introduce }}
       </div>
     </div>
-  </div>
+    <div class="links">
+      <div class="links__item" v-for="(link, index) in about.links" :key="index">
+        {{ link.text }}
+      </div>
+    </div>
+  </Section>
 </template>
 <script setup lang="ts">
 import { about } from '@/data';
+import Section from '@/components/Section.vue';
 </script>
 <style lang="scss" scoped>
 .about {
-  @include flexCenter;
-  flex-direction: column;
   animation: 1s fade-in;
+  height: 100vh;
+  padding-bottom: unset;
 
-  &__wrap {
-    height: 100vh;
-    width: $pc-section-content-width;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
   .text {
     &__name {
       font-size: 16px;
@@ -88,10 +79,6 @@ import { about } from '@/data';
   }
 
   @include mobile {
-    &__wrap {
-      width: 100%;
-      justify-content: center;
-    }
     .text {
       text-align: center;
 

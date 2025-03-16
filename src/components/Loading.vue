@@ -27,6 +27,7 @@ import { loading } from '@/data';
   &__title {
     font-family: 'Montserrat';
     font-size: 20px;
+    font-weight: 300;
     margin-top: 8px;
     animation: 1s fade-in 0.3s both;
   }

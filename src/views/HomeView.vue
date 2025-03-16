@@ -1,7 +1,7 @@
 <template>
   <Loading v-if="isLoading" />
   <main v-else class="home">
-    <TopBar @on-click="isNavOpen = !isNavOpen" />
+    <TopBar @on-click="isNavOpen = !isNavOpen" :is-open="isNavOpen" />
     <NavLeft
       :class="['home__nav-left', { 'home__nav-left--open': isNavOpen }]"
       @on-close="isNavOpen = false"
@@ -53,7 +53,7 @@ onMounted(() => {
     &__nav-left {
       display: none;
       width: 100vw;
-      padding: 30px 0;
+      padding: 200px 0 60px;
 
       &--open {
         display: flex;

@@ -49,7 +49,7 @@ export const about: AboutType = {
 export const skills: SkillsType = {
   title: 'SKILLS',
   description:
-    '從全端網頁開發到專注前端領域上，不斷學習新技術，從最初踏入前端世界的 jQuery、Bootstrap，到使用前端框架 Vue.js、React.js 到 SSR。因為對設計和美術的興趣累積了不少設計美感，也會 Figma 和 PS、AI 的基本操作。除了前端領域，也開發過後端 PHP、Java、C# 專案，在軟體開發路上也勇於嘗試其他領域，像是區塊鏈撰寫智能合約 Solidity 和 Web3.js 串接，iOS APP 從設計、開發到上架，用 Google Chrome Extension 開發小工具等等。',
+    '專注於 Vue.js 開發，熟悉使用 Nuxt.js 進行 SSR，並有初步接觸過 React.js。從 jQuery 和 Bootstrap 開始學習前端，逐步精進技術。對設計與美術有興趣，了解 Figma、PS、AI 等工具的基本操作。擁有後端開發經驗，曾開發 PHP、Java、C# 等專案，並探索區塊鏈技術，撰寫 Solidity 智能合約。也曾獨立完成 iOS App 開發及上架，開發 Google Chrome Extension，並有 LIFF 和 Electron 的 Side Project 經驗。',
   items: [
     {
       name: 'FRONT-END',
