@@ -14,8 +14,8 @@
   </Section>
 </template>
 <script setup lang="ts">
-import Section from '@/components/Section.vue';
-import WorkItem from '@/components/WorkItem.vue';
+import Section from '@/components/Shared/Section.vue';
+import WorkItem from '@/components/Shared/WorkItem.vue';
 import { works } from '@/data';
 </script>
 <style lang="scss" scoped>

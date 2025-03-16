@@ -20,7 +20,7 @@
 </template>
 <script setup lang="ts">
 import type { WorksItemType } from '@/types';
-import TagItem from '@/components/TagItem.vue';
+import TagItem from '@/components/Shared/TagItem.vue';
 
 const props = defineProps<WorksItemType>();
 </script>

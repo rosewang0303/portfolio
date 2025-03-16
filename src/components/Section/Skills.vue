@@ -31,7 +31,7 @@
   </Section>
 </template>
 <script setup lang="ts">
-import Section from '@/components/Section.vue';
+import Section from '@/components/Shared/Section.vue';
 import { skills } from '@/data';
 </script>
 <style lang="scss" scoped>

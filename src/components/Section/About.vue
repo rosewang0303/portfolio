@@ -16,7 +16,7 @@
 </template>
 <script setup lang="ts">
 import { about } from '@/data';
-import Section from '@/components/Section.vue';
+import Section from '@/components/Shared/Section.vue';
 </script>
 <style lang="scss" scoped>
 .about {

@@ -7,7 +7,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import SectionTitle from '@/components/SectionTitle.vue';
+import SectionTitle from '@/components/Shared/SectionTitle.vue';
 
 const props = defineProps<{
   title: { title: string; description: string; subTitle?: string } | null;

@@ -26,7 +26,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import type { ExperienceItemType } from '@/types';
-import TagItem from '@/components/TagItem.vue';
+import TagItem from '@/components/Shared/TagItem.vue';
 
 interface ExperienceItemProps extends ExperienceItemType {
   collapse: boolean;

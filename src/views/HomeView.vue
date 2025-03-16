@@ -13,10 +13,10 @@
 </template>
 <script setup lang="ts">
 import Loading from '@/components/Loading.vue';
-import About from '@/components/About.vue';
-import Skills from '@/components/Skills.vue';
-import Experience from '@/components/Experience.vue';
-import Works from '@/components/Works.vue';
+import About from '@/components/Section/About.vue';
+import Skills from '@/components/Section/Skills.vue';
+import Experience from '@/components/Section/Experience.vue';
+import Works from '@/components/Section/Works.vue';
 import NavLeft from '@/components/NavLeft.vue';
 import TopBar from '@/components/TopBar.vue';
 import { onMounted, ref } from 'vue';

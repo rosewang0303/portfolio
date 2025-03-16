@@ -24,8 +24,8 @@
 </template>
 <script setup lang="ts">
 import { ref } from 'vue';
-import Section from '@/components/Section.vue';
-import ExperienceItem from '@/components/ExperienceItem.vue';
+import Section from '@/components/Shared/Section.vue';
+import ExperienceItem from '@/components/Shared/ExperienceItem.vue';
 import { experience } from '@/data';
 
 const openIdx = ref(0);
