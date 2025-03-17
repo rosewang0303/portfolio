@@ -19,6 +19,11 @@ const props = defineProps<{
 .section-title {
   width: 100%;
 
+  > h1 {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
   &__deco {
     margin-right: 60px;
     font-size: 40px;

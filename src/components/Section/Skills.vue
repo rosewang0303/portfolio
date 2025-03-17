@@ -43,14 +43,9 @@ import { skills } from '@/data';
     width: 100%;
   }
 
-  .item-wrap {
-    .item {
-      &:nth-child(2) {
-        margin-top: 40px;
-      }
-    }
-  }
   .item {
+    margin-top: 40px;
+
     &__title {
       font-family: 'Montserrat';
       text-decoration: underline;
@@ -72,6 +67,12 @@ import { skills } from '@/data';
   @include mobile {
     &__items {
       flex-direction: column;
+    }
+    .item {
+      border: 1px solid #ffffff50;
+      width: 100%;
+      padding: 20px;
+      border-radius: 4px;
     }
   }
 }

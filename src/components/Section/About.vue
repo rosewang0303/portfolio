@@ -24,6 +24,9 @@ import Section from '@/components/Shared/Section.vue';
   height: 100vh;
   padding-bottom: unset;
 
+  :deep(.section-content__wrap) {
+    justify-content: space-between;
+  }
   .text {
     &__name {
       font-size: 16px;
@@ -50,7 +53,7 @@ import Section from '@/components/Shared/Section.vue';
     }
 
     &__item {
-      font-size: 88px;
+      font-size: 60px;
       margin-bottom: 8px;
 
       &:hover {
@@ -78,8 +81,15 @@ import Section from '@/components/Shared/Section.vue';
     }
   }
 
+  @include pad {
+    .links {
+      margin-top: 60px;
+    }
+  }
+
   @include mobile {
     .text {
+      margin-bottom: 32px;
       text-align: center;
 
       &__introduce {
