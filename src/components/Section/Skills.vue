@@ -1,5 +1,9 @@
 <template>
-  <Section class="skills" :title="{ title: skills.title, description: skills.description }">
+  <Section
+    id="skills"
+    class="skills"
+    :title="{ title: skills.title, description: skills.description }"
+  >
     <div class="skills__items">
       <div class="item item-wrap">
         <div class="item__title">{{ skills.items[0].name }}</div>

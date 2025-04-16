@@ -49,7 +49,7 @@ export const about: AboutType = {
 export const skills: SkillsType = {
   title: 'SKILLS',
   description:
-    '專注於 Vue.js 開發，熟悉使用 Nuxt.js 進行 SSR，並有初步接觸過 React.js。最早從 jQuery 和 Bootstrap 開始學習前端，逐步精進技術，也使用 GSAP 等動畫套件。對設計與美術有興趣，了解 Figma、PS、AI 等工具的基本操作。擁有後端開發經驗，曾開發 PHP、Java、C# 等專案，並探索區塊鏈技術，撰寫 Solidity 智能合約。曾獨立完成 iOS App 開發及上架，也開發過 Google Chrome Extension，並有 LIFF 和 Electron.js ...等技術的 Side Project 經驗。',
+    '專注於 Vue.js 開發，熟悉使用 Nuxt.js 進行 SSR，並有初步接觸過 React.js，逐步精進前端技術，也使用 GSAP 等動畫套件。對設計與美術有興趣，了解 Figma、PS、AI 等工具的基本操作。擁有後端開發經驗，曾開發 PHP、Java、C# 等專案，並探索區塊鏈技術，撰寫 Solidity 智能合約。曾獨立完成 iOS App 開發及上架，也開發過 Google Chrome Extension，並有 LIFF 和 Electron.js ...等技術的 Side Project 經驗。',
   items: [
     {
       name: 'FRONT-END',

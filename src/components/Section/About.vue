@@ -1,18 +1,24 @@
 <template>
-  <Section class="about" :title="null">
+  <Section id="about" class="about" :title="null">
     <div class="text">
       <div class="text__name">{{ about.name }}</div>
       <div class="text__title">{{ about.position }}</div>
       <div class="text__introduce" v-html="about.introduce"></div>
     </div>
     <div class="links">
-      <div class="links__item" v-for="(link, index) in about.links" :key="index">
+      <RouterLink
+        :to="{ hash: link.link }"
+        class="links__item"
+        v-for="(link, index) in about.links"
+        :key="index"
+      >
         {{ link.text }}
-      </div>
+      </RouterLink>
     </div>
   </Section>
 </template>
 <script setup lang="ts">
+import { RouterLink } from 'vue-router';
 import { about } from '@/data';
 import Section from '@/components/Shared/Section.vue';
 </script>
@@ -58,11 +64,34 @@ import Section from '@/components/Shared/Section.vue';
     &__item {
       font-size: 60px;
       margin-bottom: 8px;
+      position: relative;
+      display: block;
+
+      &::after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: linear-gradient(45deg, $liner-yellow);
+        filter: blur(60px);
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        opacity: 0;
+        transition: 0.3s all ease;
+      }
 
       &:hover {
         cursor: pointer;
         color: $white;
         animation: 0.8s link-hover both;
+
+        &::after {
+          transition: 0.3s all ease;
+          opacity: 1;
+        }
       }
     }
   }

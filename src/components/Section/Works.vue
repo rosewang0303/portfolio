@@ -1,5 +1,5 @@
 <template>
-  <Section class="works" :title="{ title: works.title, description: works.description }">
+  <Section id="works" class="works" :title="{ title: works.title, description: works.description }">
     <div class="works__projects">
       <WorkItem
         v-for="(item, index) in works.projects"
