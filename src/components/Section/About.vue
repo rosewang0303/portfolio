@@ -3,9 +3,7 @@
     <div class="text">
       <div class="text__name">{{ about.name }}</div>
       <div class="text__title">{{ about.position }}</div>
-      <div class="text__introduce">
-        {{ about.introduce }}
-      </div>
+      <div class="text__introduce" v-html="about.introduce"></div>
     </div>
     <div class="links">
       <div class="links__item" v-for="(link, index) in about.links" :key="index">
@@ -43,6 +41,11 @@ import Section from '@/components/Shared/Section.vue';
       max-width: 282px;
       font-family: 'Montserrat';
       text-align: justify;
+
+      :deep(span) {
+        color: $highlight;
+        min-height: 22px;
+      }
     }
   }
   .links {

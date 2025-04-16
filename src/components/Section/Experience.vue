@@ -11,13 +11,14 @@
       <ExperienceItem
         v-for="(item, index) in experience.list"
         :key="index"
+        :idx="index"
         :position="item.position"
         :company="item.company"
         :time="item.time"
         :tags="item.tags"
         :project="item.project"
         :collapse="index === openIdx"
-        @click="openIdx = index"
+        @on-click="clickHandler"
       />
     </div>
   </Section>
@@ -29,6 +30,10 @@ import ExperienceItem from '@/components/Shared/ExperienceItem.vue';
 import { experience } from '@/data';
 
 const openIdx = ref(0);
+
+const clickHandler = (idx: number) => {
+  openIdx.value = idx;
+};
 </script>
 <style lang="scss" scoped>
 .experience {

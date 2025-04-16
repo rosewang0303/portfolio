@@ -1,6 +1,6 @@
 <template>
-  <div class="experience-item" @click="isCollapse = !isCollapse">
-    <div class="title">
+  <div class="experience-item">
+    <div :class="['title', { 'title--empty': contentIsEmpty }]" @click="clickHandler">
       <div class="title__left">
         <div class="title__position">{{ props.position }}</div>
         <div class="title__company">{{ props.company }}</div>
@@ -8,8 +8,10 @@
       <div class="title__right">
         <div class="title__time">{{ props.time }}</div>
         <div
-          class="title__icon"
-          :class="['title__icon', { 'title__icon--open': isCollapse }]"
+          :class="[
+            'title__icon',
+            { 'title__icon--open': isCollapse, 'title__icon--empty': contentIsEmpty },
+          ]"
         ></div>
       </div>
     </div>
@@ -24,15 +26,19 @@
   </div>
 </template>
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { ref, watch, computed } from 'vue';
 import type { ExperienceItemType } from '@/types';
 import TagItem from '@/components/Shared/TagItem.vue';
 
 interface ExperienceItemProps extends ExperienceItemType {
   collapse: boolean;
+  idx: number;
 }
 
 const props = defineProps<ExperienceItemProps>();
+const emit = defineEmits<{
+  (e: 'onClick', idx: number): void;
+}>();
 
 const isCollapse = ref(false);
 
@@ -43,6 +49,15 @@ watch(
   },
   { immediate: true },
 );
+
+const contentIsEmpty = computed(() => props.project.length === 0 && props.tags.length === 0);
+
+const clickHandler = () => {
+  if (contentIsEmpty.value) return;
+
+  isCollapse.value = !isCollapse.value;
+  emit('onClick', props.idx);
+};
 </script>
 <style lang="scss" scoped>
 .experience-item {
@@ -58,6 +73,10 @@ watch(
     border-radius: 4px;
     margin-bottom: 12px;
     cursor: pointer;
+
+    &--empty {
+      cursor: unset;
+    }
 
     &__left {
       display: flex;
@@ -87,19 +106,20 @@ watch(
       &--open {
         background-image: url('assets/icon/minus.svg');
       }
+      &--empty {
+        background-image: unset;
+      }
     }
   }
+
   .content {
-    height: 0px;
-    overflow: hidden;
-    cursor: pointer;
+    display: none;
 
     &--open {
       padding: 16px 20px;
       border: $white solid 0.5px;
       border-radius: 4px;
-      height: 100%;
-      transition: 0.3s height ease;
+      display: block;
     }
     &__projects {
       div {
