@@ -31,9 +31,16 @@ const props = defineProps<WorksItemType>();
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  position: relative;
 
   &:last-child {
     border-bottom: solid 0.5px $gray;
+  }
+
+  &:hover {
+    .right__image {
+      transform: scale(1.2);
+    }
   }
 
   .left {
@@ -67,11 +74,14 @@ const props = defineProps<WorksItemType>();
   .right {
     width: 330px;
     height: 247px;
+    border: 0.2px solid $gray;
+    background-color: $black;
     overflow: hidden;
 
     &__image {
       width: 330px;
       height: 247px;
+      transition: 0.3s all ease;
     }
   }
 
