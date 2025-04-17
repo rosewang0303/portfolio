@@ -1,7 +1,6 @@
 <template>
   <CustomCursor />
-  <Loading v-if="isLoading" />
-  <main v-else class="home">
+  <main class="home">
     <TopBar @on-click="isNavOpen = !isNavOpen" :is-open="isNavOpen" />
     <NavLeft
       :class="['home__nav-left', { 'home__nav-left--open': isNavOpen }]"
@@ -13,7 +12,6 @@
   </main>
 </template>
 <script setup lang="ts">
-import Loading from '@/components/Loading.vue';
 import About from '@/components/Section/About.vue';
 import Skills from '@/components/Section/Skills.vue';
 import Experience from '@/components/Section/Experience.vue';
@@ -22,20 +20,21 @@ import NavLeft from '@/components/NavLeft.vue';
 import TopBar from '@/components/TopBar.vue';
 import CustomCursor from '@/components/CustomCursor.vue';
 
-import { onMounted, ref } from 'vue';
+import { useSectionHashSync } from '@/composables/useSectionHashSync';
 
-const isLoading = ref(true);
-const isNavOpen = ref(false);
-
-onMounted(() => {
-  setTimeout(() => {
-    isLoading.value = false;
-  }, 2500);
+useSectionHashSync(['about', 'skills', 'experience', 'works'], {
+  offset: 0,
+  threshold: 0.5,
 });
+
+import { ref } from 'vue';
+
+const isNavOpen = ref(false);
 </script>
 <style lang="scss" scoped>
 .home {
   display: flex;
+  background-color: $black;
 
   &__nav-left {
     width: 10vw;

@@ -14,6 +14,7 @@ import { loading } from '@/data';
   @include flexCenter;
   flex-direction: column;
   position: fixed;
+  z-index: 1;
   top: 0;
   left: 0;
   background-color: $white;
