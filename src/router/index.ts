@@ -19,8 +19,11 @@ const router = createRouter({
     if (to.hash) {
       return {
         el: to.hash,
+        top: 60,
       };
     }
+
+    return { top: 0 };
   },
 });
 

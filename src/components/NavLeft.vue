@@ -5,9 +5,15 @@
       <div class="top__line"></div>
     </div>
     <div class="about-links">
-      <div class="about-links__item" v-for="(link, index) in about.links" :key="index">
+      <RouterLink
+        :to="{ hash: link.link }"
+        class="about-links__item"
+        v-for="(link, index) in about.links"
+        :key="index"
+        @click="emit('onClose')"
+      >
         {{ link.text }}
-      </div>
+      </RouterLink>
     </div>
     <div class="contact-links">
       <a
@@ -22,7 +28,10 @@
   </div>
 </template>
 <script setup lang="ts">
+import { RouterLink } from 'vue-router';
 import { navLeft, about } from '@/data';
+
+const emit = defineEmits(['onClose']);
 </script>
 <style lang="scss" scoped>
 .nav-left {
@@ -98,6 +107,7 @@ import { navLeft, about } from '@/data';
       text-align: center;
 
       &__item {
+        display: block;
         font-size: 28px;
         margin-bottom: 20px;
       }
