@@ -13,7 +13,7 @@ export function useSectionHashSync(
           if (entry.isIntersecting) {
             const id = entry.target.getAttribute('id');
             if (id) {
-              history.replaceState(null, '', `#${id}`);
+              history.replaceState(history.state, '', `#${id}`);
             }
           }
         });
