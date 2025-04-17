@@ -28,7 +28,7 @@ export const navLeft: NavLeftType = {
     },
     {
       url: 'mailto:rosewang0303@gmail.com?subject=[Rose作品集] 回覆聯絡',
-      img: 'assets/icon/envelope.svg',
+      img: '/assets/icon/envelope.svg',
     },
   ],
 };
