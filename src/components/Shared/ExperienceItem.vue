@@ -1,18 +1,21 @@
 <template>
   <div class="experience-item">
-    <div :class="['title', { 'title--empty': contentIsEmpty }]" @click="clickHandler">
-      <div class="title__left">
-        <div class="title__position">{{ props.position }}</div>
-        <div class="title__company">{{ props.company }}</div>
-      </div>
-      <div class="title__right">
-        <div class="title__time">{{ props.time }}</div>
-        <div
-          :class="[
-            'title__icon',
-            { 'title__icon--open': isCollapse, 'title__icon--empty': contentIsEmpty },
-          ]"
-        ></div>
+    <div :class="['title', { 'title--open': isCollapse }]" @click="clickHandler">
+      <div class="title__arrow"></div>
+      <div :class="['title__wrap', { 'title__wrap--empty': contentIsEmpty }]">
+        <div class="title__left">
+          <div class="title__position">{{ props.position }}</div>
+          <div class="title__company">{{ props.company }}</div>
+        </div>
+        <div class="title__right">
+          <div class="title__time">{{ props.time }}</div>
+          <div
+            :class="[
+              'title__icon',
+              { 'title__icon--open': isCollapse, 'title__icon--empty': contentIsEmpty },
+            ]"
+          ></div>
+        </div>
       </div>
     </div>
     <div :class="['content', { 'content--open': isCollapse }]">
@@ -67,17 +70,51 @@ const clickHandler = () => {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 20px;
-    color: $black;
-    background-color: $white;
-    border-radius: 4px;
+    width: 100%;
     margin-bottom: 12px;
-    cursor: pointer;
 
-    &--empty {
-      cursor: unset;
+    &:hover,
+    &--open {
+      .title__wrap {
+        transition: 0.3s all ease;
+        width: calc(100% - 24px);
+      }
+      .title__arrow {
+        display: block;
+      }
     }
 
+    &__wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      color: $black;
+      background-color: $white;
+      border-radius: 4px;
+      cursor: pointer;
+      width: 100%;
+
+      &--empty {
+        cursor: unset;
+      }
+    }
+
+    @keyframes arrow-move {
+      from {
+        transform: translateX(4px);
+      }
+      to {
+        transform: translateX(0px);
+      }
+    }
+    &__arrow {
+      width: 16px;
+      height: 16px;
+      background-image: url('assets/icon/caret-right.svg');
+      animation: arrow-move 0.5s 0.5s infinite;
+      display: none;
+    }
     &__left {
       display: flex;
       align-items: center;
@@ -142,9 +179,9 @@ const clickHandler = () => {
 
   @include mobile {
     .title {
-      display: block;
       position: relative;
 
+      &__wrap,
       &__left {
         display: block;
       }
