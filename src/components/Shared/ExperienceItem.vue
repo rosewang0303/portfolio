@@ -110,7 +110,7 @@ const clickHandler = () => {
     &__arrow {
       width: 16px;
       height: 16px;
-      background-image: url('assets/icon/caret-right.svg');
+      background-image: url('/assets/icon/caret-right.svg');
       animation: arrow-move 0.5s 0.5s infinite;
       display: none;
     }
@@ -137,10 +137,10 @@ const clickHandler = () => {
     &__icon {
       width: 16px;
       height: 16px;
-      background-image: url('assets/icon/plus.svg');
+      background-image: url('/assets/icon/plus.svg');
 
       &--open {
-        background-image: url('assets/icon/minus.svg');
+        background-image: url('/assets/icon/minus.svg');
       }
       &--empty {
         background-image: unset;
