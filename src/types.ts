@@ -36,10 +36,12 @@ export interface ExperienceType {
 
 export interface WorksItemType {
   name: string;
+  date?: string;
   skills: Array<string>;
   tags: Array<string>;
   img: string;
   link?: string;
+  github?: string;
 }
 export interface WorksType {
   title: string;

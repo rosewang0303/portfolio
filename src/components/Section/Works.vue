@@ -5,10 +5,12 @@
         v-for="(item, index) in works.projects"
         :key="index"
         :name="item.name"
+        :date="item.date"
         :skills="item.skills"
         :tags="item.tags"
         :img="item.img"
         :link="item.link"
+        :github="item.github"
       />
     </div>
   </Section>

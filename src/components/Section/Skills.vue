@@ -76,7 +76,6 @@ import { skills } from '@/data';
       border: 1px solid #ffffff50;
       width: 100%;
       padding: 20px;
-      border-radius: 4px;
     }
   }
 }

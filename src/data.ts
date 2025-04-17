@@ -76,7 +76,7 @@ export const skills: SkillsType = {
     { name: 'BACK-END', skill: ['Node.js (Express)', 'PHP (Laravel)', '', 'mySQL'] },
     {
       name: '協作開發',
-      skill: ['Git (Github / Gitlab)', '', 'Figma / Zeplin / Sketch', '', 'Jira'],
+      skill: ['Git (Github / Gitlab)', '', 'Figma / Zeplin / Sketch', '', 'Jira', 'Slack'],
     },
     {
       name: 'OTHERS',
@@ -163,6 +163,7 @@ export const works: WorksType = {
   projects: [
     {
       name: 'Project Name',
+      date: '2022',
       skills: [
         '開發遊戲行銷官網 / 遊戲內營收網頁 / 後台管理系統',
         'RWD前端網頁 / In APP webview 前端開發',
@@ -177,6 +178,7 @@ export const works: WorksType = {
     },
     {
       name: 'Project Name',
+      date: '2022',
       skills: [
         '開發遊戲行銷官網 / 遊戲內營收網頁 / 後台管理系統',
         'RWD前端網頁 / In APP webview 前端開發',
@@ -190,6 +192,7 @@ export const works: WorksType = {
     },
     {
       name: 'Project Name',
+      date: '2022',
       skills: [
         '開發遊戲行銷官網 / 遊戲內營收網頁 / 後台管理系統',
         'RWD前端網頁 / In APP webview 前端開發',
@@ -200,6 +203,7 @@ export const works: WorksType = {
       ],
       tags: ['Vue.js', 'Nuxt.js', 'TypeScript'],
       img: '',
+      github: 'https://github.com/rosewang0303',
     },
   ],
 };

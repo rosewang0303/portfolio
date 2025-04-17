@@ -91,7 +91,6 @@ const clickHandler = () => {
       padding: 16px 20px;
       color: $black;
       background-color: $white;
-      border-radius: 4px;
       cursor: pointer;
       width: 100%;
 
@@ -155,7 +154,6 @@ const clickHandler = () => {
     &--open {
       padding: 16px 20px;
       border: $white solid 0.5px;
-      border-radius: 4px;
       display: block;
     }
     &__projects {

@@ -1,46 +1,67 @@
 <template>
-  <a class="work-item" :href="props.link" target="_blank">
-    <div class="left">
-      <div>
-        <div class="left__name">{{ props.name }}</div>
-        <div class="left__skills">
-          <div v-for="(item, index) in props.skills" :key="index">{{ item }}</div>
+  <div class="work-item" :href="props.link" target="_blank">
+    <div class="work-item__date">{{ props.date }}</div>
+    <div class="work-item__wrap">
+      <div class="left">
+        <div>
+          <div class="left__name">
+            {{ props.name }}
+          </div>
+          <div class="left__skills">
+            <div v-for="(item, index) in props.skills" :key="index">{{ item }}</div>
+          </div>
+        </div>
+        <div>
+          <div class="left__tags">
+            <BtnItem v-if="props.github" :link="props.github" class="github"
+              ><span class="github__icon"></span>Github</BtnItem
+            >
+            <TagItem v-for="(item, index) in props.tags" :key="index" :text="item" />
+          </div>
         </div>
       </div>
-      <div>
-        <div class="left__tags">
-          <TagItem v-for="(item, index) in props.tags" :key="index" :text="item" />
-        </div>
+      <div class="right">
+        <a :href="props.link" target="_blank">
+          <img :class="['right__image', { 'right__image--effect': props.link }]" :src="props.img" />
+        </a>
       </div>
     </div>
-    <div class="right">
-      <img class="right__image" :src="props.img" />
-    </div>
-  </a>
+  </div>
 </template>
 <script setup lang="ts">
 import type { WorksItemType } from '@/types';
 import TagItem from '@/components/Shared/TagItem.vue';
+import BtnItem from '@/components/Shared/BtnItem.vue';
 
 const props = defineProps<WorksItemType>();
 </script>
 <style lang="scss" scoped>
 .work-item {
-  padding: 28px 0;
-  border-top: solid 0.5px $gray;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  position: relative;
-
   &:last-child {
-    border-bottom: solid 0.5px $gray;
+    .work-item__wrap {
+      border-bottom: solid 0.5px $gray;
+    }
   }
 
-  &:hover {
-    .right__image {
-      transform: scale(1.2);
-    }
+  &__date {
+    background-color: $white;
+    color: $black;
+    font-size: 14px;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 18px;
+    padding: 0 8px;
+    margin-right: 4px;
+  }
+  &__wrap {
+    padding: 28px 0 36px;
+    border-top: solid 0.5px $gray;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
   }
 
   .left {
@@ -70,6 +91,20 @@ const props = defineProps<WorksItemType>();
       display: flex;
       flex-wrap: wrap;
     }
+    .github {
+      &:hover {
+        .github__icon {
+          background-image: url('assets/icon/github-dark.svg');
+        }
+      }
+      &__icon {
+        width: 16px;
+        height: 16px;
+        margin-right: 4px;
+        background-image: url('assets/icon/github.svg');
+        background-size: contain;
+      }
+    }
   }
   .right {
     width: 330px;
@@ -81,7 +116,12 @@ const props = defineProps<WorksItemType>();
     &__image {
       width: 330px;
       height: 247px;
-      transition: 0.3s all ease;
+
+      &--effect:hover {
+        filter: brightness(0.8);
+        transition: 0.3s all ease;
+        transform: scale(1.1);
+      }
     }
   }
 
@@ -89,9 +129,7 @@ const props = defineProps<WorksItemType>();
     flex-direction: column-reverse;
 
     .left {
-      &__name {
-        margin-top: 20px;
-      }
+      &__name,
       &__tags {
         margin-top: 20px;
       }
@@ -99,6 +137,7 @@ const props = defineProps<WorksItemType>();
     .right {
       width: 100%;
       height: unset;
+      margin-top: 20px;
 
       &__image {
         width: calc(100vw - 20px * 2);
