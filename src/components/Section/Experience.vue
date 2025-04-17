@@ -10,6 +10,7 @@
   >
     <div class="experience__items">
       <ExperienceItem
+        class="fade-in-left"
         v-for="(item, index) in experience.list"
         :key="index"
         :idx="index"

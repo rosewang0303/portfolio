@@ -2,6 +2,7 @@
   <Section id="works" class="works" :title="{ title: works.title, description: works.description }">
     <div class="works__projects">
       <WorkItem
+        class="fade-in-top"
         v-for="(item, index) in works.projects"
         :key="index"
         :name="item.name"

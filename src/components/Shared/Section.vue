@@ -1,5 +1,5 @@
 <template>
-  <div class="section-content">
+  <div class="section-content" ref="sectionRef">
     <div class="section-content__wrap">
       <SectionTitle class="section-content__title" v-if="props.title" :="props.title" />
       <slot></slot>
@@ -7,11 +7,16 @@
   </div>
 </template>
 <script setup lang="ts">
+import { ref } from 'vue';
 import SectionTitle from '@/components/Shared/SectionTitle.vue';
+import { useSequentialFadeIn } from '@/composables/useSequentialFadeIn';
 
 const props = defineProps<{
   title: { title: string; description: string; subTitle?: string } | null;
 }>();
+
+const sectionRef = ref<HTMLElement | null>(null);
+useSequentialFadeIn(sectionRef);
 </script>
 <style lang="scss" scoped>
 .section-content {

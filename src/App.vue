@@ -1,6 +1,6 @@
 <template>
   <Loading v-if="isLoading" />
-  <RouterView />
+  <RouterView v-else />
 </template>
 <script setup lang="ts">
 import Loading from '@/components/Loading.vue';
