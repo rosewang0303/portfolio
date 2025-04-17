@@ -83,6 +83,11 @@ const clickHandler = () => {
         display: block;
       }
     }
+    &--open {
+      .title__arrow {
+        animation: unset;
+      }
+    }
 
     &__wrap {
       display: flex;

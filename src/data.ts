@@ -141,7 +141,7 @@ export const experience: ExperienceType = {
     },
     {
       position: '程式設計實習生',
-      company: '@國泰人壽保險股份有限公司',
+      company: '@國泰金融控股股份有限公司',
       time: '2018/06 ~ 2018/02 (5m)',
       project: ['開發金融後台系統 / 部門內部工具', '後端 API、模組開發', '前端開發'],
       tags: ['Java', 'JSP', 'Jquery'],
