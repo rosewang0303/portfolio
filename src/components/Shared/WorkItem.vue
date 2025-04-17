@@ -96,7 +96,7 @@ const props = defineProps<WorksItemType>();
         width: 16px;
         height: 16px;
         margin-right: 4px;
-        background-image: url('assets/icon/github-dark.svg');
+        background-image: url('/assets/icon/github-dark.svg');
         background-size: contain;
       }
     }
