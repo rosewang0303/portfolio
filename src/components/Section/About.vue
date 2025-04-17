@@ -8,7 +8,7 @@
     <div class="links">
       <RouterLink
         :to="{ hash: link.link }"
-        class="links__item"
+        class="links__item cursor-target"
         v-for="(link, index) in about.links"
         :key="index"
       >

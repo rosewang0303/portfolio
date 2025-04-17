@@ -11,7 +11,7 @@
     </div>
     <div class="contact-links">
       <a
-        class="contact-links__item"
+        :class="['cursor-target', 'contact-links__item']"
         v-for="(item, index) in navLeft.links"
         :key="index"
         :style="{ backgroundImage: `url(${item.img})` }"

@@ -1,5 +1,9 @@
 <template>
-  <a :class="['btn-item', { 'btn-item--effect': props.link }]" :href="props.link" target="_blank">
+  <a
+    :class="['btn-item', { 'btn-item--effect': props.link, 'cursor-target': props.link }]"
+    :href="props.link"
+    target="_blank"
+  >
     <slot></slot>
   </a>
 </template>
@@ -13,6 +17,8 @@ const props = defineProps<{
   font-size: 14px;
   padding: 4px 12px;
   border: solid $white 0.5px;
+  background-color: $white;
+  color: $black;
   margin-top: 8px;
   margin-right: 12px;
   display: flex;
@@ -23,9 +29,8 @@ const props = defineProps<{
     cursor: pointer;
   }
   &--effect:hover {
-    background-color: $white;
-    color: $black;
     transition: 0.3s all ease;
+    filter: brightness(0.5);
   }
 }
 </style>

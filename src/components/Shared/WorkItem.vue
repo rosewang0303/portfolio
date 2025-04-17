@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="right">
-        <a :href="props.link" target="_blank">
+        <a :href="props.link" target="_blank" :class="{ 'cursor-target': props.link }">
           <img :class="['right__image', { 'right__image--effect': props.link }]" :src="props.img" />
         </a>
       </div>
@@ -92,16 +92,11 @@ const props = defineProps<WorksItemType>();
       flex-wrap: wrap;
     }
     .github {
-      &:hover {
-        .github__icon {
-          background-image: url('assets/icon/github-dark.svg');
-        }
-      }
       &__icon {
         width: 16px;
         height: 16px;
         margin-right: 4px;
-        background-image: url('assets/icon/github.svg');
+        background-image: url('assets/icon/github-dark.svg');
         background-size: contain;
       }
     }

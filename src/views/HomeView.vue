@@ -1,4 +1,5 @@
 <template>
+  <CustomCursor />
   <Loading v-if="isLoading" />
   <main v-else class="home">
     <TopBar @on-click="isNavOpen = !isNavOpen" :is-open="isNavOpen" />
@@ -19,6 +20,8 @@ import Experience from '@/components/Section/Experience.vue';
 import Works from '@/components/Section/Works.vue';
 import NavLeft from '@/components/NavLeft.vue';
 import TopBar from '@/components/TopBar.vue';
+import CustomCursor from '@/components/CustomCursor.vue';
+
 import { onMounted, ref } from 'vue';
 
 const isLoading = ref(true);
