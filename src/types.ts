@@ -40,6 +40,7 @@ export interface WorksItemType {
   date?: string;
   skills: Array<string>;
   tags: Array<string>;
+  demoImgs: Array<string>;
   imgs: Array<string>;
   link?: string;
   github?: string;

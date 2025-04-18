@@ -174,12 +174,13 @@ export const works: WorksType = {
         '開發文件維護',
       ],
       tags: ['Nuxt.js (Vue.js)', 'Typescript', 'SASS (SCSS)'],
+      demoImgs: [''],
       imgs: [''],
       link: 'https://deltaforce.garena.com/en/?redirect=0',
     },
     {
       id: 7,
-      name: '遊戲內網頁遊戲',
+      name: '手遊 In-App-Webview 網頁遊戲',
       date: '2022~2025年 工作專案',
       skills: [
         '前端 RWD',
@@ -187,8 +188,10 @@ export const works: WorksType = {
         '特效動畫、音效處理',
         '與後端、美術設計合作',
         '開發文件維護',
+        'In-App-Webview 行動裝置網頁開發',
       ],
       tags: ['Vue.js (Vue2, Vue3)', 'Typescript', 'SASS (SCSS)'],
+      demoImgs: [''],
       imgs: [''],
     },
     {
@@ -204,7 +207,8 @@ export const works: WorksType = {
         'In-App-Webview行動裝置網頁開發',
       ],
       tags: ['Nuxt.js (Vue.js)', 'SASS (SCSS)'],
-      imgs: ['/assets/works/shop.png', '/assets/works/shop_2.png'],
+      demoImgs: ['/assets/works/shop.png', '/assets/works/shop_2.png'],
+      imgs: [''],
       link: 'https://www.shop168.fun/',
     },
     {
@@ -219,7 +223,8 @@ export const works: WorksType = {
         '以太坊智能合約開發及合約互動api撰寫',
       ],
       tags: ['Javascript', 'CSS', 'Bootstrap', '多國語處理'],
-      imgs: ['/assets/works/tracke.png'],
+      demoImgs: ['/assets/works/tracke.png'],
+      imgs: [''],
     },
     {
       id: 4,
@@ -227,7 +232,8 @@ export const works: WorksType = {
       date: '2019~2022年 工作專案',
       skills: ['販賣機使用者互動開發', '廣告遊戲開發'],
       tags: ['Vue.js', 'CSS'],
-      imgs: ['/assets/works/vending_machines.png'],
+      demoImgs: ['/assets/works/vending_machines.png'],
+      imgs: [''],
     },
     {
       id: 3,
@@ -235,7 +241,8 @@ export const works: WorksType = {
       date: '2018~2019年 工作專案',
       skills: ['全端網站RWD', 'SSR開發及後續維護', '資料庫建置規劃，獨立開發'],
       tags: ['PHP (Laravel)', 'CSS', 'Javascript'],
-      imgs: ['/assets/works/altc.png'],
+      demoImgs: ['/assets/works/altc.png'],
+      imgs: [''],
       link: 'https://www.airltc.com/',
     },
     {
@@ -250,7 +257,8 @@ export const works: WorksType = {
         '處理客戶第一線需求',
       ],
       tags: ['C# (.Net Framework)', 'CSS', 'Javascript'],
-      imgs: ['/assets/works/taoyuan.png', '/assets/works/taoyuan_2.png'],
+      demoImgs: ['/assets/works/taoyuan.png', '/assets/works/taoyuan_2.png'],
+      imgs: [''],
     },
     {
       id: 1,
@@ -258,7 +266,8 @@ export const works: WorksType = {
       date: '2018~2019年 工作專案',
       skills: ['全端網站RWD', 'SSR開發', '資料庫建置規劃', 'iOS APP開發'],
       tags: ['C# (.Net Framework)', 'CSS', 'Javascript'],
-      imgs: ['/assets/works/taichung.png', '/assets/works/taichung_2.png'],
+      demoImgs: ['/assets/works/taichung.png', '/assets/works/taichung_2.png'],
+      imgs: [''],
     },
   ],
 };

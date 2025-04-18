@@ -4,6 +4,11 @@
   justify-content: center;
 }
 
+@mixin lg-pc {
+  @media (max-width: $breakpoint-lg-pc) {
+    @content;
+  }
+}
 @mixin pad {
   @media (max-width: $breakpoint-pad) {
     @content;
