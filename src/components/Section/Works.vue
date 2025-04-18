@@ -9,7 +9,7 @@
         :date="item.date"
         :skills="item.skills"
         :tags="item.tags"
-        :img="item.img"
+        :imgs="item.imgs"
         :link="item.link"
         :github="item.github"
       />

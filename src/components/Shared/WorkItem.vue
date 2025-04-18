@@ -22,13 +22,24 @@
       </div>
       <div class="right">
         <a
+          v-if="props.imgs.length > 0"
           :href="props.link"
           target="_blank"
-          :class="['right__wrap', { 'cursor-target': props.link }]"
+          :class="[
+            'right__wrap',
+            { 'cursor-target': props.link, 'right__wrap--effect': props.link },
+          ]"
         >
           <img
-            :class="['right__image', { 'right__image--effect': props.link }]"
-            :src="props.imgs[0]"
+            :class="[
+              'right__image',
+              {
+                'right__image--active': index === currentIndex,
+              },
+            ]"
+            v-for="(img, index) in props.imgs"
+            :key="index"
+            :src="img"
           />
         </a>
       </div>
@@ -36,11 +47,23 @@
   </div>
 </template>
 <script setup lang="ts">
+import { ref, onMounted } from 'vue';
 import type { WorksItemType } from '@/types';
 import TagItem from '@/components/Shared/TagItem.vue';
 import BtnItem from '@/components/Shared/BtnItem.vue';
 
 const props = defineProps<WorksItemType>();
+
+const currentIndex = ref(0);
+const timer = ref<number | undefined>(undefined);
+
+onMounted(() => {
+  if (props.imgs.length > 1) {
+    timer.value = setInterval(() => {
+      currentIndex.value = (currentIndex.value + 1) % props.imgs.length;
+    }, 3000);
+  }
+});
 </script>
 <style lang="scss" scoped>
 .work-item {
@@ -108,22 +131,35 @@ const props = defineProps<WorksItemType>();
     }
   }
   .right {
-    width: 330px;
-    height: 247px;
-    border: 0.2px solid $gray;
-    background-color: $black;
-    overflow: hidden;
-
     &__wrap {
-    }
-    &__image {
       width: 330px;
       height: 247px;
+      border: 0.2px solid $gray;
+      background-color: $black;
+      overflow: hidden;
+      position: relative;
+      display: block;
 
       &--effect:hover {
-        filter: brightness(0.8);
+        filter: brightness(0.6);
         transition: 0.3s all ease;
-        transform: scale(1.1);
+      }
+    }
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transform: scale(0.99);
+      transition: all 1s ease;
+
+      &--active {
+        filter: brightness(1);
+        transform: scale(1);
+        opacity: 1;
       }
     }
   }

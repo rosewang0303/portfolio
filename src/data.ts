@@ -173,7 +173,7 @@ export const works: WorksType = {
         'In-App-Webview行動裝置網頁開發',
       ],
       tags: ['Vue.js', 'Nuxt.js', 'SASS (SCSS)'],
-      imgs: ['/assets/works/shop.png'],
+      imgs: ['/assets/works/shop_2.png', '/assets/works/shop.png'],
       link: 'https://www.shop168.fun/',
     },
     {
