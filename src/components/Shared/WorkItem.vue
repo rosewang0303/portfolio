@@ -21,8 +21,15 @@
         </div>
       </div>
       <div class="right">
-        <a :href="props.link" target="_blank" :class="{ 'cursor-target': props.link }">
-          <img :class="['right__image', { 'right__image--effect': props.link }]" :src="props.img" />
+        <a
+          :href="props.link"
+          target="_blank"
+          :class="['right__wrap', { 'cursor-target': props.link }]"
+        >
+          <img
+            :class="['right__image', { 'right__image--effect': props.link }]"
+            :src="props.imgs[0]"
+          />
         </a>
       </div>
     </div>
@@ -47,7 +54,6 @@ const props = defineProps<WorksItemType>();
     background-color: $white;
     color: $black;
     font-size: 14px;
-    font-weight: bold;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -56,7 +62,7 @@ const props = defineProps<WorksItemType>();
     margin-right: 4px;
   }
   &__wrap {
-    padding: 28px 0 36px;
+    padding: 28px 0 64px;
     border-top: solid 0.5px $gray;
     display: flex;
     justify-content: space-between;
@@ -108,6 +114,8 @@ const props = defineProps<WorksItemType>();
     background-color: $black;
     overflow: hidden;
 
+    &__wrap {
+    }
     &__image {
       width: 330px;
       height: 247px;
