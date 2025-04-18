@@ -33,10 +33,15 @@ export interface ExperienceType {
   description: string;
   list: Array<ExperienceItemType>;
 }
-
+export enum WorksCategoryEnum {
+  ALL = 'all',
+  WORK = 'work',
+  SIDE_PROJECT = 'side-project',
+}
 export interface WorksItemType {
   id: number;
   name: string;
+  category: WorksCategoryEnum;
   date?: string;
   skills: Array<string>;
   tags: Array<string>;

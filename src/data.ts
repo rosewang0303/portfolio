@@ -6,6 +6,7 @@ import type {
   ExperienceType,
   WorksType,
 } from '@/types';
+import { WorksCategoryEnum } from '@/types';
 
 export const loading: LoadingType = {
   name: 'ROSE WANG',
@@ -164,7 +165,8 @@ export const works: WorksType = {
     {
       id: 8,
       name: '遊戲行銷官網',
-      date: '2022~2025年 工作專案',
+      category: WorksCategoryEnum.WORK,
+      date: '2022~2025年',
       skills: [
         '前端 RWD',
         'SSR 框架開發',
@@ -181,7 +183,8 @@ export const works: WorksType = {
     {
       id: 7,
       name: '手遊 In-App-Webview 網頁遊戲',
-      date: '2022~2025年 工作專案',
+      category: WorksCategoryEnum.WORK,
+      date: '2022~2025年',
       skills: [
         '前端 RWD',
         '串接 api 及後續維護',
@@ -197,7 +200,8 @@ export const works: WorksType = {
     {
       id: 6,
       name: '樂享購 (電商網路購物平台)',
-      date: '2019~2022年 工作專案',
+      category: WorksCategoryEnum.WORK,
+      date: '2019~2022年',
       skills: [
         '前端RWD',
         'SSR框架開發',
@@ -214,7 +218,8 @@ export const works: WorksType = {
     {
       id: 5,
       name: 'Tracke (區塊鏈收藏品交易平台)',
-      date: '2019~2022年 工作專案',
+      category: WorksCategoryEnum.WORK,
+      date: '2019~2022年',
       skills: [
         '前端RWD開發',
         '串接 api 及後續維護',
@@ -229,7 +234,8 @@ export const works: WorksType = {
     {
       id: 4,
       name: '智慧販賣機 (實體機台連網販賣機)',
-      date: '2019~2022年 工作專案',
+      category: WorksCategoryEnum.WORK,
+      date: '2019~2022年',
       skills: ['販賣機使用者互動開發', '廣告遊戲開發'],
       tags: ['Vue.js', 'CSS'],
       demoImgs: ['/assets/works/vending_machines.png'],
@@ -238,7 +244,8 @@ export const works: WorksType = {
     {
       id: 3,
       name: 'ALTC (長期照護媒合平台)',
-      date: '2018~2019年 工作專案',
+      category: WorksCategoryEnum.WORK,
+      date: '2018~2019年',
       skills: ['全端網站RWD', 'SSR開發及後續維護', '資料庫建置規劃，獨立開發'],
       tags: ['PHP (Laravel)', 'CSS', 'Javascript'],
       demoImgs: ['/assets/works/altc.png'],
@@ -248,7 +255,8 @@ export const works: WorksType = {
     {
       id: 2,
       name: '桃園市社會局日照及公托資訊管理系統',
-      date: '2018~2019年 工作專案',
+      category: WorksCategoryEnum.WORK,
+      date: '2018~2019年',
       skills: [
         '全端網站RWD',
         'SSR開發',
@@ -263,7 +271,8 @@ export const works: WorksType = {
     {
       id: 1,
       name: '臺中市長期照顧資訊系統',
-      date: '2018~2019年 工作專案',
+      category: WorksCategoryEnum.WORK,
+      date: '2018~2019年',
       skills: ['全端網站RWD', 'SSR開發', '資料庫建置規劃', 'iOS APP開發'],
       tags: ['C# (.Net Framework)', 'CSS', 'Javascript'],
       demoImgs: ['/assets/works/taichung.png', '/assets/works/taichung_2.png'],

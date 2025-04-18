@@ -1,16 +1,15 @@
 <template>
   <Section id="works" class="works" :title="{ title: works.title, description: works.description }">
     <div class="works__category">
-      <BtnItem>全部</BtnItem>
-      <BtnItem>工作專案</BtnItem>
-      <BtnItem>Side Project</BtnItem>
+      <Tabs :items="categoryList" @on-click="tabClickHandler" />
     </div>
     <div class="works__projects">
       <WorkGalleryItem
         class="fade-in-top"
-        v-for="(item, index) in works.projects"
+        v-for="(item, index) in workList"
         :key="index"
         :id="item.id"
+        :category="item.category"
         :name="item.name"
         :date="item.date"
         :skills="item.skills"
@@ -24,11 +23,38 @@
   </Section>
 </template>
 <script setup lang="ts">
+import { ref, computed } from 'vue';
 import Section from '@/components/Shared/Section.vue';
 import WorkGalleryItem from '@/components/Shared/WorkGalleryItem.vue';
-import BtnItem from '@/components/Shared/BtnItem.vue';
-
+import Tabs from '@/components/Shared/Tabs.vue';
+import { WorksCategoryEnum } from '@/types';
 import { works } from '@/data';
+
+const categoryList = [
+  {
+    key: WorksCategoryEnum.ALL,
+    text: '全部',
+  },
+  {
+    key: WorksCategoryEnum.WORK,
+    text: '工作專案',
+  },
+  {
+    key: WorksCategoryEnum.SIDE_PROJECT,
+    text: 'Side Project',
+  },
+];
+
+const filterCategoryKey = ref(WorksCategoryEnum.ALL as string);
+
+const tabClickHandler = (key: string) => {
+  filterCategoryKey.value = key;
+};
+
+const workList = computed(() => {
+  if (filterCategoryKey.value === WorksCategoryEnum.ALL) return works.projects;
+  return works.projects.filter((item) => item.category === filterCategoryKey.value);
+});
 </script>
 <style lang="scss" scoped>
 .works {
@@ -36,10 +62,7 @@ import { works } from '@/data';
     width: 100%;
     display: flex;
     align-items: center;
-    // justify-content: flex-start;
-    // padding-bottom: 8px;
     margin-bottom: 32px;
-    // border-bottom: solid 0.5px $gray;
   }
   &__projects {
     width: 100%;
