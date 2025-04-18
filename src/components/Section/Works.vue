@@ -5,6 +5,7 @@
         class="fade-in-top"
         v-for="(item, index) in works.projects"
         :key="index"
+        :id="item.id"
         :name="item.name"
         :date="item.date"
         :skills="item.skills"

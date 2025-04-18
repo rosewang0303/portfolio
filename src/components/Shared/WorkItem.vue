@@ -148,7 +148,7 @@ onMounted(() => {
     &__image {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: fill;
       position: absolute;
       top: 0;
       left: 0;

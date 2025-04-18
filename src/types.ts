@@ -35,6 +35,7 @@ export interface ExperienceType {
 }
 
 export interface WorksItemType {
+  id: number;
   name: string;
   date?: string;
   skills: Array<string>;
