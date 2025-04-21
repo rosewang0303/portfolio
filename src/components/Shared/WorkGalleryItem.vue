@@ -58,8 +58,12 @@ onMounted(() => {
 
     &:hover {
       .work-gallery-item__image {
-        filter: brightness(0.6);
+        filter: brightness(0.8);
         transition: 0.3s all ease;
+      }
+      .work-gallery-item__img-wrap {
+        transition: 0.3s all ease;
+        border: 0.2px solid $white;
       }
       .work-gallery-item__name {
         color: $highlight;

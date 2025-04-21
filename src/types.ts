@@ -44,6 +44,7 @@ export interface WorksItemType {
   category: WorksCategoryEnum;
   date?: string;
   skills: Array<string>;
+  description?: string;
   tags: Array<string>;
   demoImgs: Array<string>;
   imgs: Array<string>;
