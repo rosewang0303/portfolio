@@ -1,15 +1,17 @@
 <template>
-  <CustomCursor />
-  <main class="layout">
-    <TopBar @on-click="isNavOpen = !isNavOpen" :is-open="isNavOpen" />
-    <NavLeft
-      :class="['layout__nav-left', { 'layout__nav-left--open': isNavOpen }]"
-      @on-close="isNavOpen = false"
-    />
-    <div :class="['layout__content', { 'layout__content--open': !isNavOpen }]">
-      <slot></slot>
-    </div>
-  </main>
+  <div>
+    <CustomCursor />
+    <main class="layout">
+      <TopBar @on-click="isNavOpen = !isNavOpen" :is-open="isNavOpen" />
+      <NavLeft
+        :class="['layout__nav-left', { 'layout__nav-left--open': isNavOpen }]"
+        @on-close="isNavOpen = false"
+      />
+      <div :class="['layout__content', { 'layout__content--open': !isNavOpen }]">
+        <slot></slot>
+      </div>
+    </main>
+  </div>
 </template>
 <script setup lang="ts">
 import NavLeft from '@/components/NavLeft.vue';

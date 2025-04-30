@@ -24,12 +24,14 @@
   </Section>
 </template>
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted } from 'vue';
 import Section from '@/components/Shared/Section.vue';
 import WorkGalleryItem from '@/components/Shared/WorkGalleryItem.vue';
 import Tabs from '@/components/Shared/Tabs.vue';
 import { WorksCategoryEnum } from '@/types';
 import { works } from '@/data';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const categoryList = [
   {
@@ -55,6 +57,27 @@ const tabClickHandler = (key: string) => {
 const workList = computed(() => {
   if (filterCategoryKey.value === WorksCategoryEnum.ALL) return works.projects;
   return works.projects.filter((item) => item.category === filterCategoryKey.value);
+});
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.works',
+      toggleActions: 'play none none none',
+    },
+  });
+
+  tl.from('.works .section-title', { duration: 0.8, opacity: 0, y: 80 }).from(
+    '.works .fade-in-top',
+    {
+      duration: 0.7,
+      opacity: 0,
+      y: 40,
+      stagger: 0.2,
+    },
+  );
 });
 </script>
 <style lang="scss" scoped>
