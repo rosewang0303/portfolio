@@ -35,7 +35,8 @@ const timer = ref<number | undefined>(undefined);
 onMounted(() => {
   if (props.demoImgs && props.demoImgs.length > 1) {
     timer.value = setInterval(() => {
-      currentIndex.value = (currentIndex.value + 1) % props.demoImgs.length;
+      if (props.demoImgs) currentIndex.value = (currentIndex.value + 1) % props.demoImgs.length;
+      else timer.value = undefined;
     }, 3000);
   }
 });
