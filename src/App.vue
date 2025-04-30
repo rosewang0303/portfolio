@@ -13,7 +13,7 @@ const isLoading = ref(true);
 onMounted(() => {
   setTimeout(() => {
     isLoading.value = false;
-  }, 2500);
+  }, 24 * 100);
 });
 </script>
 <style lang="scss" scoped></style>

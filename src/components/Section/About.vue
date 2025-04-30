@@ -21,10 +21,20 @@
 import { RouterLink } from 'vue-router';
 import { about } from '@/data';
 import Section from '@/components/Shared/Section.vue';
+import { onMounted } from 'vue';
+import gsap from 'gsap';
+
+onMounted(() => {
+  const tl = gsap.timeline();
+
+  tl.from('.text__name', { duration: 0.3, opacity: 0, y: 20 })
+    .from('.text__title', { duration: 0.2, opacity: 0, y: 18 })
+    .from('.text__introduce', { duration: 0.3, opacity: 0, y: 20 });
+});
 </script>
 <style lang="scss" scoped>
 .about {
-  animation: 1s fade-in;
+  // animation: 1s fade-in;
   height: 100vh;
   padding-bottom: unset;
 

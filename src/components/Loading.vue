@@ -6,6 +6,25 @@
 </template>
 <script setup lang="ts">
 import { loading } from '@/data';
+import { onMounted } from 'vue';
+import gsap from 'gsap';
+
+onMounted(() => {
+  const tl = gsap.timeline();
+
+  tl.from('.loading-bg__name', { duration: 0.6, delay: 0.2, opacity: 0, y: 30 }, '-=0.2')
+    .from(
+      '.loading-bg__title',
+      {
+        duration: 0.4,
+        opacity: 0,
+        y: 30,
+      },
+      '+=0.5',
+    )
+    .to('.loading-bg', { duration: 0.1, opacity: 0.9 }, '+=0.2')
+    .to('.loading-bg', { duration: 0.6, y: '-100%' });
+});
 </script>
 <style lang="scss" scoped>
 .loading-bg {
@@ -19,39 +38,15 @@ import { loading } from '@/data';
   left: 0;
   background-color: $white;
   color: $black;
-  animation: 0.5s fade-out 2s both ease-in-out;
 
   &__name {
     font-size: 60px;
-    animation: 1s fade-in 0.2s both;
   }
   &__title {
     font-family: 'Montserrat';
     font-size: 20px;
     font-weight: 300;
     margin-top: 8px;
-    animation: 1s fade-in 0.3s both;
-  }
-
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  @keyframes fade-out {
-    80% {
-      opacity: 0.8;
-    }
-    100% {
-      opacity: 0;
-      transform: translateY(-100vh);
-      display: none;
-    }
   }
 
   @include mobile {
