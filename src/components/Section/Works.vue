@@ -18,6 +18,7 @@
         :imgs="item.imgs"
         :link="item.link"
         :github="item.github"
+        :showLink="true"
       />
     </div>
   </Section>

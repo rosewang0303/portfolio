@@ -8,6 +8,7 @@ const props = defineProps<{ text: string }>();
 </script>
 <style lang="scss" scoped>
 .tag-item {
+  display: inline-block;
   font-size: 14px;
   padding: 4px 12px;
   border: solid $white 0.5px;

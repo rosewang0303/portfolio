@@ -1,10 +1,8 @@
 <template>
-  <div class="work-gallery-item" :href="props.link" target="_blank">
+  <div class="work-gallery-item">
     <a
-      v-if="props.imgs.length > 0"
-      :href="props.link"
-      target="_blank"
-      class="work-gallery-item__wrap cursor-target"
+      :href="props.showLink ? `works/${props.id}` : undefined"
+      :class="['work-gallery-item__wrap', { 'cursor-target': props.showLink }]"
     >
       <div class="work-gallery-item__img-wrap">
         <img
@@ -29,13 +27,13 @@
 import { ref, onMounted } from 'vue';
 import type { WorksItemType } from '@/types';
 
-const props = defineProps<WorksItemType>();
+const props = defineProps<Partial<WorksItemType & { showLink: boolean }>>();
 
 const currentIndex = ref(0);
 const timer = ref<number | undefined>(undefined);
 
 onMounted(() => {
-  if (props.demoImgs.length > 1) {
+  if (props.demoImgs && props.demoImgs.length > 1) {
     timer.value = setInterval(() => {
       currentIndex.value = (currentIndex.value + 1) % props.demoImgs.length;
     }, 3000);
@@ -53,9 +51,7 @@ onMounted(() => {
 
   width: $pc-width;
 
-  &__wrap {
-    width: 100%;
-
+  &__wrap.cursor-target {
     &:hover {
       .work-gallery-item__image {
         filter: brightness(0.8);
@@ -63,7 +59,7 @@ onMounted(() => {
       }
       .work-gallery-item__img-wrap {
         transition: 0.3s all ease;
-        border: 0.2px solid $white;
+        border: 0.2px solid $highlight;
       }
       .work-gallery-item__name {
         color: $highlight;
@@ -83,7 +79,7 @@ onMounted(() => {
   &__image {
     width: 100%;
     height: 100%;
-    object-fit: fill;
+    object-fit: contain;
     position: absolute;
     top: 0;
     left: 0;
@@ -107,14 +103,14 @@ onMounted(() => {
     text-overflow: ellipsis;
   }
 
-  @include lg-pc {
+  @include pad {
     width: $lg-pc-width;
 
     &__img-wrap {
       height: $lg-pc-height;
     }
   }
-  @include pad {
+  @include mobile {
     width: $mb-width;
 
     &__img-wrap {

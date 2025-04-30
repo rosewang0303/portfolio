@@ -1,38 +1,27 @@
 <template>
   <CustomCursor />
-  <main class="home">
+  <main class="layout">
     <TopBar @on-click="isNavOpen = !isNavOpen" :is-open="isNavOpen" />
     <NavLeft
-      :class="['home__nav-left', { 'home__nav-left--open': isNavOpen }]"
+      :class="['layout__nav-left', { 'layout__nav-left--open': isNavOpen }]"
       @on-close="isNavOpen = false"
     />
-    <div :class="['home__content', { 'home__content--open': !isNavOpen }]">
-      <About /><Skills /><Experience /><Works />
+    <div :class="['layout__content', { 'layout__content--open': !isNavOpen }]">
+      <slot></slot>
     </div>
   </main>
 </template>
 <script setup lang="ts">
-import About from '@/components/Section/About.vue';
-import Skills from '@/components/Section/Skills.vue';
-import Experience from '@/components/Section/Experience.vue';
-import Works from '@/components/Section/Works.vue';
 import NavLeft from '@/components/NavLeft.vue';
 import TopBar from '@/components/TopBar.vue';
 import CustomCursor from '@/components/CustomCursor.vue';
-
-import { useSectionHashSync } from '@/composables/useSectionHashSync';
-
-useSectionHashSync(['about', 'skills', 'experience', 'works'], {
-  offset: 0,
-  threshold: 0.5,
-});
 
 import { ref } from 'vue';
 
 const isNavOpen = ref(false);
 </script>
 <style lang="scss" scoped>
-.home {
+.layout {
   display: flex;
   background-color: $black;
 
