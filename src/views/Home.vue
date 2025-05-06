@@ -1,9 +1,13 @@
 <template>
-  <Loading v-if="isLoading" />
-  <Layout v-else class="home"><About /><Skills /><Experience /><Works /></Layout>
+  <Layout class="home">
+    <Loading v-if="!hasLoaded" />
+    <template v-else> <About /><Skills /><Experience /><Works /> </template>
+  </Layout>
 </template>
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { onMounted } from 'vue';
+import { useBaseStore } from '@/stores/base';
+import { storeToRefs } from 'pinia';
 import Loading from '@/components/Loading.vue';
 import About from '@/components/Section/About.vue';
 import Skills from '@/components/Section/Skills.vue';
@@ -17,12 +21,15 @@ useSectionHashSync(['about', 'skills', 'experience', 'works'], {
   threshold: 0.5,
 });
 
-const isLoading = ref(true);
+const { setHasLoaded } = useBaseStore();
+const { hasLoaded } = storeToRefs(useBaseStore());
 
 onMounted(() => {
-  setTimeout(() => {
-    isLoading.value = false;
-  }, 24 * 100);
+  if (!hasLoaded.value) {
+    setTimeout(() => {
+      setHasLoaded(true);
+    }, 24 * 100);
+  }
 });
 </script>
 <style lang="scss" scoped>
