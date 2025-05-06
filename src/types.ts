@@ -17,7 +17,7 @@ export interface AboutType {
 export interface SkillsType {
   title: string;
   description: string;
-  items: Array<{ name: string; skill: Array<string> }>;
+  items: Array<{ name: string; skill: Array<string | null> }>;
 }
 
 export interface ExperienceItemType {

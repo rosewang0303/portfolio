@@ -69,9 +69,8 @@ const workInfo = computed(() => {
   &__item-wrap {
     width: 100%;
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     padding: 24px 0;
   }
 

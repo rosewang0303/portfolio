@@ -91,12 +91,8 @@ onMounted(() => {
   &__projects {
     width: 100%;
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
     gap: 30px;
-  }
-
-  @include mobile {
   }
 }
 </style>
