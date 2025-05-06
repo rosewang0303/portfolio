@@ -1,7 +1,9 @@
 <template>
   <div class="work-gallery-item">
-    <a
-      :href="props.showLink ? `works/${props.id}` : undefined"
+    <div v-if="props.tags" class="work-gallery-item__tag">{{ props.tags[0] }}</div>
+    <router-link
+      v-if="props.showLink"
+      :to="`/works/${props.id}`"
       :class="['work-gallery-item__wrap', { 'cursor-target': props.showLink }]"
     >
       <div class="work-gallery-item__img-wrap">
@@ -20,7 +22,25 @@
       <div class="work-gallery-item__name">
         {{ props.name }}
       </div>
-    </a>
+    </router-link>
+    <div v-else class="work-gallery-item__wrap">
+      <div class="work-gallery-item__img-wrap">
+        <img
+          :class="[
+            'work-gallery-item__image',
+            {
+              'work-gallery-item__image--active': index === currentIndex,
+            },
+          ]"
+          v-for="(img, index) in props.demoImgs"
+          :key="index"
+          :src="img"
+        />
+      </div>
+      <div class="work-gallery-item__name">
+        {{ props.name }}
+      </div>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -43,14 +63,8 @@ onMounted(() => {
 </script>
 <style lang="scss" scoped>
 .work-gallery-item {
-  $pc-width: 20vw;
-  $pc-height: calc(247 * 20vw / 330);
-  $lg-pc-width: 31vw;
-  $lg-pc-height: calc(247 * 31vw / 330);
-  $mb-width: 100vw;
-  $mb-height: calc(247 * 100vw / 330);
-
-  width: $pc-width;
+  flex: 1 1 calc((100% - 30px * 2) / 3);
+  max-width: calc((100% - 30px * 2) / 3);
 
   &__wrap.cursor-target {
     &:hover {
@@ -68,22 +82,36 @@ onMounted(() => {
       }
     }
   }
+  &__tag {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 8px;
+    font-size: 14px;
+    padding: 4px 12px;
+    background-color: $white;
+    color: $black;
+    box-shadow: 2px 2px 10px rgb(91 91 91);
+  }
   &__img-wrap {
-    width: 100%;
-    height: $pc-height;
     border: 0.2px solid $gray;
     background-color: $black;
     overflow: hidden;
     position: relative;
     display: block;
+    position: relative;
+
+    width: 100%;
+    padding-top: 74.85%;
   }
   &__image {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
     opacity: 0;
     transform: scale(0.99);
     transition: all 1s ease;
@@ -104,19 +132,13 @@ onMounted(() => {
     text-overflow: ellipsis;
   }
 
-  @include pad {
-    width: $lg-pc-width;
-
-    &__img-wrap {
-      height: $lg-pc-height;
-    }
+  @include lg-pc {
+    flex: 1 1 calc((100% - 30px) / 2);
+    max-width: calc((100% - 30px) / 2);
   }
-  @include mobile {
-    width: $mb-width;
-
-    &__img-wrap {
-      height: $mb-height;
-    }
+  @include pad {
+    flex: 1 1 100%;
+    max-width: 100%;
   }
 }
 </style>
