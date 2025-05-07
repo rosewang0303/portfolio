@@ -43,6 +43,7 @@ onMounted(() => {
   }
   .text {
     &__name {
+      color: $highlight;
       font-size: 16px;
       font-weight: bold;
       margin-bottom: 20px;

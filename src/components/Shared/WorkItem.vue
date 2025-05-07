@@ -8,7 +8,7 @@
         </div>
         <div class="work-item__description" v-html="props.description"></div>
         <div class="work-item__skills">
-          <div v-for="(item, index) in props.skills" :key="index">{{ item }}</div>
+          <div v-for="(item, index) in props.skills" :key="index" v-html="item"></div>
         </div>
       </div>
       <div>
@@ -19,7 +19,9 @@
           <BtnItem v-if="props.github" :link="props.github" class="github"
             ><span class="github__icon"></span>Github</BtnItem
           >
-          <BtnItem v-if="props.link" :link="props.link" class="github">Project Demo</BtnItem>
+          <BtnItem v-for="(item, index) in props.demoLinks" :link="item.link" :key="index">{{
+            item.text
+          }}</BtnItem>
         </div>
       </div>
     </div>
@@ -55,7 +57,9 @@ const props = defineProps<WorksItemType>();
   }
   &__description {
     margin-bottom: 20px;
-
+  }
+  &__description,
+  &__skills {
     :deep(a) {
       text-decoration: underline;
 
@@ -63,11 +67,15 @@ const props = defineProps<WorksItemType>();
         color: $highlight;
       }
     }
+    :deep(span) {
+      color: $highlight;
+    }
   }
   &__skills {
     div {
       position: relative;
       padding-left: 12px;
+      line-height: 1.5;
 
       &::after {
         content: '-';

@@ -48,7 +48,10 @@ export interface WorksItemType {
   tags: Array<string>;
   demoImgs: Array<string>;
   imgs: Array<string>;
-  link?: string;
+  demoLinks?: Array<{
+    link: string;
+    text: string;
+  }>;
   github?: string;
 }
 export interface WorksType {
