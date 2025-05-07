@@ -13,7 +13,7 @@
           :description="workInfo.description"
           :demoImgs="workInfo.demoImgs"
           :imgs="workInfo.imgs"
-          :link="workInfo.link"
+          :demoLinks="workInfo.demoLinks"
           :github="workInfo.github"
         />
       </div>
@@ -32,7 +32,7 @@
 
 <script setup lang="ts">
 import Layout from '@/components/Shared/Layout.vue';
-import { onMounted, computed } from 'vue';
+import { computed } from 'vue';
 import WorkItem from '@/components/Shared/WorkItem.vue';
 import WorkGalleryItem from '@/components/Shared/WorkGalleryItem.vue';
 import TagItem from '@/components/Shared/TagItem.vue';
@@ -42,23 +42,12 @@ import { useRoute } from 'vue-router';
 
 const route = useRoute();
 
-onMounted(() => {
-  console.error(works.projects);
-  console.error(route.params.id);
-});
-
 const workInfo = computed(() => {
   return works.projects.find((item) => item.id.toString() === route.params.id);
 });
 </script>
 <style lang="scss" scoped>
 .work-detail {
-  // width: 80%;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
-  // flex-wrap: wrap;
-
   &__wrap {
     width: 100%;
     margin-top: 60px;
@@ -69,15 +58,12 @@ const workInfo = computed(() => {
   &__item-wrap {
     width: 100%;
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 30px;
     padding: 24px 0;
   }
 
   @include mobile {
-    // width: 100%;
-    // justify-content: center;
   }
 }
 </style>

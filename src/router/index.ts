@@ -17,14 +17,17 @@ const router = createRouter({
     //   component: NotFoundView,
     // },
   ],
-  scrollBehavior(to) {
+  scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
       return {
         el: to.hash,
+        behavior: 'smooth',
         top: 60,
       };
     }
-
+    if (savedPosition) {
+      return savedPosition;
+    }
     return { top: 0 };
   },
 });

@@ -17,7 +17,7 @@ export interface AboutType {
 export interface SkillsType {
   title: string;
   description: string;
-  items: Array<{ name: string; skill: Array<string> }>;
+  items: Array<{ name: string; skill: Array<string | null> }>;
 }
 
 export interface ExperienceItemType {
@@ -48,7 +48,10 @@ export interface WorksItemType {
   tags: Array<string>;
   demoImgs: Array<string>;
   imgs: Array<string>;
-  link?: string;
+  demoLinks?: Array<{
+    link: string;
+    text: string;
+  }>;
   github?: string;
 }
 export interface WorksType {

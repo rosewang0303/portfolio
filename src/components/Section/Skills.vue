@@ -37,6 +37,30 @@
 <script setup lang="ts">
 import Section from '@/components/Shared/Section.vue';
 import { skills } from '@/data';
+import gsap from 'gsap';
+import { onMounted } from 'vue';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+onMounted(() => {
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.skills',
+      toggleActions: 'play none none none',
+    },
+  });
+
+  tl.from('.skills .section-title', { duration: 0.8, opacity: 0, y: 80 }).from(
+    '.skills .fade-in-top',
+    {
+      duration: 0.7,
+      opacity: 0,
+      y: 40,
+      stagger: 0.2,
+    },
+  );
+});
 </script>
 <style lang="scss" scoped>
 .skills {
