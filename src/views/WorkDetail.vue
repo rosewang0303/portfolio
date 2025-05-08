@@ -27,6 +27,7 @@
         />
       </div>
     </Section>
+    <Footer />
   </Layout>
 </template>
 
@@ -37,6 +38,7 @@ import WorkItem from '@/components/Shared/WorkItem.vue';
 import WorkGalleryItem from '@/components/Shared/WorkGalleryItem.vue';
 import TagItem from '@/components/Shared/TagItem.vue';
 import Section from '@/components/Shared/Section.vue';
+import Footer from '@/components/Footer.vue';
 import { works } from '@/data';
 import { useRoute } from 'vue-router';
 
