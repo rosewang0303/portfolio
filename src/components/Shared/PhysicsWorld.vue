@@ -66,8 +66,9 @@ onMounted(() => {
 
   Matter.World.add(engine.world, mouseConstraint);
 
-  containerRef.value.removeEventListener('DOMMouseScroll', mouse.mousewheel);
-  containerRef.value.removeEventListener('wheel', mouse.mousewheel); // 新版瀏覽器
+  const mousewheelHandler = (mouse as unknown as { mousewheel: EventListener }).mousewheel;
+  containerRef.value.removeEventListener('DOMMouseScroll', mousewheelHandler);
+  containerRef.value.removeEventListener('wheel', mousewheelHandler);
 });
 
 onBeforeUnmount(() => {
