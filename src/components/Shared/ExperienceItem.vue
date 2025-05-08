@@ -180,7 +180,7 @@ const clickHandler = () => {
     }
   }
 
-  @include mobile {
+  @include pad {
     .title {
       position: relative;
 
@@ -188,6 +188,10 @@ const clickHandler = () => {
       &__left {
         display: block;
       }
+    }
+  }
+  @include mobile {
+    .title {
       &__position {
         margin-right: unset;
       }

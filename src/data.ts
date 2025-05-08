@@ -16,20 +16,24 @@ export const loading: LoadingType = {
 export const navLeft: NavLeftType = {
   links: [
     {
-      url: 'https://github.com/rosewang0303',
-      img: '/assets/icon/github.svg',
+      url: 'mailto:rosewang0303@gmail.com?subject=[Rose作品集] 回覆聯絡',
+      img: '/assets/icon/envelope.svg',
+      text: 'rosewang0303@gmail.com',
     },
     {
-      url: 'https://codepen.io/rosewang0303',
-      img: '/assets/icon/codepen.svg',
+      url: 'https://github.com/rosewang0303',
+      img: '/assets/icon/github.svg',
+      text: 'GitHub',
     },
     {
       url: 'https://www.linkedin.com/in/rose-wang-9577631b8/',
       img: '/assets/icon/linkin.svg',
+      text: 'LinkIn',
     },
     {
-      url: 'mailto:rosewang0303@gmail.com?subject=[Rose作品集] 回覆聯絡',
-      img: '/assets/icon/envelope.svg',
+      url: 'https://codepen.io/rosewang0303',
+      img: '/assets/icon/codepen.svg',
+      text: 'Codepen',
     },
   ],
 };
@@ -43,7 +47,7 @@ export const about: AboutType = {
     { text: 'SKILLS', link: '#skills' },
     { text: 'EXPERIENCE', link: '#experience' },
     { text: 'WORKS', link: '#works' },
-    { text: 'CONTACT', link: '#contact' },
+    // { text: 'CONTACT', link: '#contact' },
   ],
 };
 
@@ -167,11 +171,11 @@ export const experience: ExperienceType = {
       tags: ['Java', 'JSP', 'Jquery'],
     },
     {
-      position: '資訊管理學系 畢業',
+      position: '資訊管理學系 學士',
       company: '@東海大學',
       time: '2014/09 ~ 2018/06 (4y)',
-      project: [],
-      tags: [],
+      project: ['程式設計', '資料庫規劃', '統計學', '離散數學', '會計學', '資訊管理', '微積分'],
+      tags: ['Python', 'Java', 'Javascript', 'PHP', 'C', 'C#'],
     },
   ],
 };

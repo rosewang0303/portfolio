@@ -13,7 +13,7 @@ import About from '@/components/Section/About.vue';
 import Skills from '@/components/Section/Skills.vue';
 import Experience from '@/components/Section/Experience.vue';
 import Works from '@/components/Section/Works.vue';
-import Layout from '@/components/Shared/Layout.vue';
+import Layout from '@/components/Layout.vue';
 import { useSectionHashSync } from '@/composables/useSectionHashSync';
 
 useSectionHashSync(['about', 'skills', 'experience', 'works'], {

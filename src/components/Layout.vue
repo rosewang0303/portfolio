@@ -9,6 +9,7 @@
       />
       <div :class="['layout__content', { 'layout__content--open': !isNavOpen }]">
         <slot></slot>
+        <Footer />
       </div>
     </main>
   </div>
@@ -17,6 +18,7 @@
 import NavLeft from '@/components/NavLeft.vue';
 import TopBar from '@/components/TopBar.vue';
 import CustomCursor from '@/components/CustomCursor.vue';
+import Footer from '@/components/Footer.vue';
 
 import { ref } from 'vue';
 
