@@ -1,0 +1,101 @@
+<template>
+  <div class="physics-item" :style="style" ref="el">
+    <slot />
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, onMounted, onBeforeUnmount, inject, computed } from 'vue';
+import Matter from 'matter-js';
+
+const world = inject('matterWorld');
+
+const el = ref<HTMLElement | null>(null);
+const position = ref({ x: 0, y: 0 });
+const body = ref<Matter.Body | null>(null);
+
+const min = 200;
+const max = 800;
+const numberPool = ref<number[]>([]);
+
+const initNumberPool = () => {
+  numberPool.value = [];
+  for (let i = min; i <= max; i++) {
+    numberPool.value.push(i);
+  }
+
+  for (let i = numberPool.value.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [numberPool.value[i], numberPool.value[j]] = [numberPool.value[j], numberPool.value[i]];
+  }
+};
+
+// 每次取得一個不重複的隨機數字
+const getRandomUniqueNumber = (): number | null => {
+  if (numberPool.value.length === 0) return null;
+  return numberPool.value.pop() || null;
+};
+
+// 初始化
+initNumberPool();
+
+onMounted(() => {
+  if (!el.value) return;
+
+  const width = el.value.offsetWidth;
+  const height = el.value.offsetHeight;
+
+  body.value = Matter.Bodies.rectangle(getRandomUniqueNumber(), -10, width, height, {
+    restitution: 0.9,
+    friction: 0.1,
+  });
+
+  if (world) {
+    Matter.World.add(world, body.value);
+  }
+
+  const update = () => {
+    if (body.value) {
+      position.value = {
+        x: body.value.position.x - width / 2,
+        y: body.value.position.y - height / 2,
+      };
+    }
+    requestAnimationFrame(update);
+  };
+  update();
+});
+
+onBeforeUnmount(() => {
+  if (world && body.value) {
+    Matter.World.remove(world, body.value);
+  }
+});
+
+// 用來綁定實際位置
+const style = computed(() => ({
+  transform: `translate(${position.value.x}px, ${position.value.y}px)`,
+  position: 'absolute',
+}));
+</script>
+
+<style lang="scss">
+.physics-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border-radius: 8px;
+  user-select: none;
+  cursor: grab;
+  z-index: 1;
+  min-width: 50px;
+  min-height: 50px;
+  height: auto;
+
+  img {
+    pointer-event: none;
+    user-drag: none;
+  }
+}
+</style>

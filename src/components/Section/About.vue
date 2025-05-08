@@ -15,7 +15,7 @@
         {{ link.text }}
       </RouterLink>
     </div>
-    <div class="physics-interact">
+    <div class="physics-interaction">
       <PhysicsWorld></PhysicsWorld>
     </div>
   </Section>
@@ -110,7 +110,7 @@ onMounted(() => {
       }
     }
   }
-  .physics-interact {
+  .physics-interaction {
     width: 100%;
     height: 30vh;
     position: relative;
@@ -134,12 +134,6 @@ onMounted(() => {
   }
 
   @include pad {
-    .links {
-      margin-top: 60px;
-    }
-  }
-
-  @include mobile {
     .text {
       margin-bottom: 32px;
       text-align: center;
@@ -149,6 +143,12 @@ onMounted(() => {
         text-align: justify;
       }
     }
+    .links {
+      margin-top: 60px;
+    }
+  }
+
+  @include mobile {
     .links {
       display: none;
     }
