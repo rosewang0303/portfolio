@@ -93,8 +93,7 @@ const style = computed(() => ({
   height: auto;
 
   img {
-    pointer-event: none;
-    user-drag: none;
+    pointer-events: none;
   }
 }
 </style>
