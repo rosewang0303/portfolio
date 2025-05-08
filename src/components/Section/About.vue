@@ -7,7 +7,7 @@
     </div>
     <div class="links">
       <RouterLink
-        :to="{ hash: link.link }"
+        :to="link.link"
         class="links__item cursor-target"
         v-for="(link, index) in about.links"
         :key="index"
@@ -15,12 +15,16 @@
         {{ link.text }}
       </RouterLink>
     </div>
+    <div class="physics-interact">
+      <PhysicsWorld></PhysicsWorld>
+    </div>
   </Section>
 </template>
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
 import { about } from '@/data';
 import Section from '@/components/Shared/Section.vue';
+import PhysicsWorld from '@/components/Shared/PhysicsWorld.vue';
 import { onMounted } from 'vue';
 import gsap from 'gsap';
 
@@ -34,9 +38,9 @@ onMounted(() => {
 </script>
 <style lang="scss" scoped>
 .about {
-  // animation: 1s fade-in;
   height: 100vh;
   padding-bottom: unset;
+  position: relative;
 
   :deep(.section-content__wrap) {
     justify-content: space-between;
@@ -105,6 +109,11 @@ onMounted(() => {
         }
       }
     }
+  }
+  .physics-interact {
+    width: 100%;
+    height: 30vh;
+    position: relative;
   }
   @keyframes link-hover {
     10% {
