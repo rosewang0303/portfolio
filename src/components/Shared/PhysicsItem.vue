@@ -1,5 +1,5 @@
 <template>
-  <div class="physics-item" :style="style" ref="el">
+  <div class="physics-item" :style="style" ref="elRef">
     <slot />
   </div>
 </template>
@@ -7,10 +7,11 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount, inject, computed } from 'vue';
 import Matter from 'matter-js';
+import type { World } from 'matter-js';
 
-const world = inject('matterWorld');
+const world = inject<World>('matterWorld');
 
-const el = ref<HTMLElement | null>(null);
+const elRef = ref<HTMLElement | null>(null);
 const position = ref({ x: 0, y: 0 });
 const body = ref<Matter.Body | null>(null);
 
@@ -30,20 +31,19 @@ const initNumberPool = () => {
   }
 };
 
-// 每次取得一個不重複的隨機數字
-const getRandomUniqueNumber = (): number | null => {
-  if (numberPool.value.length === 0) return null;
-  return numberPool.value.pop() || null;
+const getRandomUniqueNumber = (): number => {
+  if (numberPool.value.length === 0) return 0;
+  return numberPool.value.pop() || 0;
 };
 
 // 初始化
 initNumberPool();
 
 onMounted(() => {
-  if (!el.value) return;
+  if (!elRef.value) return;
 
-  const width = el.value.offsetWidth;
-  const height = el.value.offsetHeight;
+  const width = elRef.value.offsetWidth;
+  const height = elRef.value.offsetHeight;
 
   body.value = Matter.Bodies.rectangle(getRandomUniqueNumber(), -10, width, height, {
     restitution: 0.9,
@@ -87,7 +87,6 @@ const style = computed(() => ({
   background-color: transparent;
   border-radius: 8px;
   user-select: none;
-  cursor: grab;
   z-index: 1;
   min-width: 50px;
   min-height: 50px;

@@ -16,7 +16,7 @@ import PhysicsItem from '@/components/Shared/PhysicsItem.vue';
 import Matter from 'matter-js';
 import { brandLogoList } from '@/data';
 
-const containerRef = ref(null);
+const containerRef = ref<HTMLElement | null>(null);
 const engine = Matter.Engine.create();
 const runner = Matter.Runner.create();
 
@@ -27,6 +27,8 @@ onMounted(() => {
   Matter.Runner.run(runner, engine);
 
   // 加上地板 + 邊界
+  if (!containerRef.value) return;
+
   const bounds = containerRef.value.getBoundingClientRect();
   const thickness = 100;
 
@@ -82,15 +84,14 @@ onBeforeUnmount(() => {
   top: 0;
   height: 100%;
   width: 100%;
-  //   border: 1px solid $white;
   overflow: hidden;
   background: transparent;
-}
 
-.physics-area {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  z-index: 1;
+  .physics-area {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+  }
 }
 </style>
