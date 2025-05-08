@@ -3,7 +3,7 @@
     <div class="wrap">
       <div>
         <RouterLink
-          :to="{ hash: link.link }"
+          :to="link.link"
           class="link cursor-target"
           v-for="(link, index) in about.links"
           :key="index"
@@ -23,7 +23,9 @@
         >
       </div>
     </div>
-    <div class="copyright">Copyright © 2025 Rose Wang</div>
+    <div class="copyright">
+      <div>Copyright © 2025 Rose Wang</div>
+    </div>
   </footer>
 </template>
 <script setup lang="ts">
@@ -31,14 +33,16 @@ import { navLeft, about } from '@/data';
 </script>
 <style lang="scss" scoped>
 footer {
-  padding: 60px 0 80px;
+  padding-top: 60px;
   margin: 0 auto;
   width: 80%;
+  border-top: 0.5px solid $white;
 
   .wrap {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 2;
   }
   .link {
     display: block;
@@ -63,7 +67,7 @@ footer {
     }
   }
   .copyright {
-    margin-top: 50px;
+    padding: 50px 0 80px 0;
     text-align: center;
   }
 

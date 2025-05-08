@@ -1,12 +1,12 @@
 <template>
   <div class="nav-left">
     <div class="top">
-      <div class="top__logo">ROSE</div>
+      <RouterLink to="/" class="top__logo">ROSE</RouterLink>
       <div class="top__line"></div>
     </div>
     <div class="about-links">
       <RouterLink
-        :to="{ hash: link.link }"
+        :to="link.link"
         class="about-links__item"
         v-for="(link, index) in about.links"
         :key="index"

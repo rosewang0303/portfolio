@@ -82,8 +82,6 @@ onMounted(() => {
 </script>
 <style lang="scss" scoped>
 .works {
-  border-bottom: 0.5px solid $white;
-
   &__category {
     width: 100%;
     display: flex;
