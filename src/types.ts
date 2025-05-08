@@ -4,7 +4,7 @@ export interface LoadingType {
 }
 
 export interface NavLeftType {
-  links: Array<{ img: string; url: string }>;
+  links: Array<{ img: string; url: string; text: string }>;
 }
 
 export interface AboutType {

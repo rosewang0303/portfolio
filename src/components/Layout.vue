@@ -17,7 +17,6 @@
 import NavLeft from '@/components/NavLeft.vue';
 import TopBar from '@/components/TopBar.vue';
 import CustomCursor from '@/components/CustomCursor.vue';
-
 import { ref } from 'vue';
 
 const isNavOpen = ref(false);
@@ -33,6 +32,9 @@ const isNavOpen = ref(false);
     position: fixed;
     top: 0;
     left: 0;
+  }
+  &__slot {
+    min-height: 100vh;
   }
   &__content {
     width: 90vw;

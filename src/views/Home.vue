@@ -1,7 +1,7 @@
 <template>
   <Layout class="home">
     <Loading v-if="!hasLoaded" />
-    <template v-else> <About /><Skills /><Experience /><Works /> </template>
+    <template v-else> <About /><Skills /><Experience /><Works /><Footer /> </template>
   </Layout>
 </template>
 <script setup lang="ts">
@@ -13,7 +13,8 @@ import About from '@/components/Section/About.vue';
 import Skills from '@/components/Section/Skills.vue';
 import Experience from '@/components/Section/Experience.vue';
 import Works from '@/components/Section/Works.vue';
-import Layout from '@/components/Shared/Layout.vue';
+import Layout from '@/components/Layout.vue';
+import Footer from '@/components/Footer.vue';
 import { useSectionHashSync } from '@/composables/useSectionHashSync';
 
 useSectionHashSync(['about', 'skills', 'experience', 'works'], {
