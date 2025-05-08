@@ -4,8 +4,6 @@
       <PhysicsItem v-for="(img, index) in brandLogoList" :key="index">
         <img :src="img" />
       </PhysicsItem>
-
-      <!-- <slot /> -->
     </div>
   </section>
 </template>
@@ -68,7 +66,6 @@ onMounted(() => {
 
   Matter.World.add(engine.world, mouseConstraint);
 
-  containerRef.value.removeEventListener('mousewheel', mouse.mousewheel);
   containerRef.value.removeEventListener('DOMMouseScroll', mouse.mousewheel);
   containerRef.value.removeEventListener('wheel', mouse.mousewheel); // 新版瀏覽器
 });

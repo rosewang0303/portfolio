@@ -1,11 +1,15 @@
 <template>
-  <div class="physics-item" :style="style" ref="elRef">
+  <div
+    class="physics-item"
+    :style="`transform: translate(${position.x}px, ${position.y}px)`"
+    ref="elRef"
+  >
     <slot />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount, inject, computed } from 'vue';
+import { ref, onMounted, onBeforeUnmount, inject } from 'vue';
 import Matter from 'matter-js';
 import type { World } from 'matter-js';
 
@@ -71,12 +75,6 @@ onBeforeUnmount(() => {
     Matter.World.remove(world, body.value);
   }
 });
-
-// 用來綁定實際位置
-const style = computed(() => ({
-  transform: `translate(${position.value.x}px, ${position.value.y}px)`,
-  position: 'absolute',
-}));
 </script>
 
 <style lang="scss">
@@ -91,6 +89,7 @@ const style = computed(() => ({
   min-width: 50px;
   min-height: 50px;
   height: auto;
+  position: absolute;
 
   img {
     pointer-events: none;
