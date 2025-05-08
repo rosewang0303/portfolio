@@ -16,7 +16,7 @@
         :tags="item.tags"
         :demoImgs="item.demoImgs"
         :imgs="item.imgs"
-        :link="item.link"
+        :demoLinks="item.demoLinks"
         :github="item.github"
         :showLink="true"
       />
