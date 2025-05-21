@@ -40,7 +40,6 @@ const getRandomUniqueNumber = (): number => {
   return numberPool.value.pop() || 0;
 };
 
-// 初始化
 initNumberPool();
 
 onMounted(() => {
