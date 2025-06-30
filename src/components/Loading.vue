@@ -1,7 +1,7 @@
 <template>
   <div class="loading-bg">
-    <div class="loading-bg__name">{{ loading.name }}</div>
-    <div class="loading-bg__title">{{ loading.position }}</div>
+    <div class="loading-bg__name">{{ $t(loading.name) }}</div>
+    <div class="loading-bg__title">{{ $t(loading.position) }}</div>
   </div>
 </template>
 <script setup lang="ts">

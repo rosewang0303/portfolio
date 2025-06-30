@@ -12,7 +12,7 @@
         :key="index"
         @click="emit('onClose')"
       >
-        {{ link.text }}
+        {{ $t(link.text) }}
       </RouterLink>
     </div>
     <div class="contact-links">
@@ -24,12 +24,14 @@
         :href="item.url"
         target="_blank"
       ></a>
+      <LanguageMenu />
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import { RouterLink } from 'vue-router';
 import { navLeft, about } from '@/data';
+import LanguageMenu from '@/components/LanguageMenu.vue';
 
 const emit = defineEmits(['onClose']);
 </script>

@@ -40,12 +40,9 @@ export enum WorksCategoryEnum {
 }
 export interface WorksItemType {
   id: number;
-  name: string;
   category: WorksCategoryEnum;
-  date?: string;
-  skills: Array<string>;
-  description?: string;
-  tags: Array<string>;
+  skillsCount: number;
+  tagsCount: number;
   demoImgs: Array<string>;
   imgs: Array<string>;
   demoLinks?: Array<{
@@ -58,4 +55,11 @@ export interface WorksType {
   title: string;
   description: string;
   projects: Array<WorksItemType>;
+  lang: {
+    name: string;
+    date: string;
+    skillsPrefix: string;
+    tagsPrefix: string;
+    description: string;
+  };
 }

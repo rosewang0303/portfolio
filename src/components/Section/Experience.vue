@@ -3,9 +3,9 @@
     id="experience"
     class="experience"
     :title="{
-      title: experience.title,
+      title: $t(experience.title),
       subTitle: experience.subTitle,
-      description: experience.description,
+      description: $t(experience.description),
     }"
   >
     <div class="experience__items">

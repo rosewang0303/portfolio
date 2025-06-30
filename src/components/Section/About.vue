@@ -1,9 +1,9 @@
 <template>
   <Section id="about" class="about" :title="null">
     <div class="text">
-      <div class="text__name">{{ about.name }}</div>
-      <div class="text__title">{{ about.position }}</div>
-      <div class="text__introduce" v-html="about.introduce"></div>
+      <div class="text__name">{{ $t(about.name) }}</div>
+      <div class="text__title">{{ $t(about.position) }}</div>
+      <div class="text__introduce" v-html="$t(about.introduce)"></div>
     </div>
     <div class="links">
       <RouterLink
@@ -12,7 +12,7 @@
         v-for="(link, index) in about.links"
         :key="index"
       >
-        {{ link.text }}
+        {{ $t(link.text) }}
       </RouterLink>
     </div>
     <div class="physics-interaction">

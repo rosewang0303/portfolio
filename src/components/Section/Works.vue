@@ -1,5 +1,9 @@
 <template>
-  <Section id="works" class="works" :title="{ title: works.title, description: works.description }">
+  <Section
+    id="works"
+    class="works"
+    :title="{ title: $t(works.title), description: $t(works.description) }"
+  >
     <div class="works__category">
       <Tabs :items="categoryList" @on-click="tabClickHandler" />
     </div>
@@ -10,15 +14,13 @@
         :key="index"
         :id="item.id"
         :category="item.category"
-        :name="item.name"
-        :date="item.date"
-        :skills="item.skills"
-        :tags="item.tags"
         :demoImgs="item.demoImgs"
         :imgs="item.imgs"
         :demoLinks="item.demoLinks"
         :github="item.github"
         :showLink="true"
+        :showName="true"
+        :showFirstTag="true"
       />
     </div>
   </Section>
@@ -29,24 +31,9 @@ import Section from '@/components/Shared/Section.vue';
 import WorkGalleryItem from '@/components/Shared/WorkGalleryItem.vue';
 import Tabs from '@/components/Shared/Tabs.vue';
 import { WorksCategoryEnum } from '@/types';
-import { works } from '@/data';
+import { works, categoryList } from '@/data';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-const categoryList = [
-  {
-    key: WorksCategoryEnum.ALL,
-    text: '全部',
-  },
-  {
-    key: WorksCategoryEnum.WORK,
-    text: '工作專案',
-  },
-  {
-    key: WorksCategoryEnum.SIDE_PROJECT,
-    text: 'Side Project',
-  },
-];
 
 const filterCategoryKey = ref(WorksCategoryEnum.ALL as string);
 
