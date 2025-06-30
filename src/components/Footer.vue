@@ -8,7 +8,7 @@
           v-for="(link, index) in about.links"
           :key="index"
         >
-          {{ link.text }}
+          {{ $t(link.text) }}
         </RouterLink>
       </div>
       <div class="contact-links">
@@ -24,7 +24,7 @@
       </div>
     </div>
     <div class="copyright">
-      <div>Copyright © 2025 Rose Wang</div>
+      <div>Copyright © {{ new Date().getFullYear() }} Rose Wang</div>
     </div>
   </footer>
 </template>

@@ -2,33 +2,37 @@
   <Section
     id="skills"
     class="skills"
-    :title="{ title: skills.title, description: skills.description }"
+    :title="{ title: $t(skills.title), description: $t(skills.description) }"
   >
     <div class="skills__items">
       <div class="item item-wrap fade-in-top">
-        <div class="item__title">{{ skills.items[0].name }}</div>
+        <div class="item__title">{{ $t(skills.items[0].name) }}</div>
         <div v-for="(item, index) in skills.items[0].skill" :key="index">
-          <div class="item__text" v-html="item"></div>
+          <div v-if="item" class="item__text" v-html="$t(item)"></div>
+          <div v-else class="item__text"></div>
         </div>
       </div>
       <div class="item-wrap fade-in-top">
         <div class="item">
-          <div class="item__title">{{ skills.items[1].name }}</div>
+          <div class="item__title">{{ $t(skills.items[1].name) }}</div>
           <div v-for="(item, index) in skills.items[1].skill" :key="index">
-            <div class="item__text" v-html="item"></div>
+            <div v-if="item" class="item__text" v-html="$t(item)"></div>
+            <div v-else class="item__text"></div>
           </div>
         </div>
         <div class="item">
-          <div class="item__title">{{ skills.items[2].name }}</div>
+          <div class="item__title">{{ $t(skills.items[2].name) }}</div>
           <div v-for="(item, index) in skills.items[2].skill" :key="index">
-            <div class="item__text" v-html="item"></div>
+            <div v-if="item" class="item__text" v-html="$t(item)"></div>
+            <div v-else class="item__text"></div>
           </div>
         </div>
       </div>
       <div class="item fade-in-top">
-        <div class="item__title">{{ skills.items[3].name }}</div>
+        <div class="item__title">{{ $t(skills.items[3].name) }}</div>
         <div v-for="(item, index) in skills.items[3].skill" :key="index">
-          <div class="item__text" v-html="item"></div>
+          <div v-if="item" class="item__text" v-html="$t(item)"></div>
+          <div v-else class="item__text"></div>
         </div>
       </div>
     </div>

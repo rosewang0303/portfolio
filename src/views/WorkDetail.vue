@@ -6,11 +6,8 @@
           v-if="workInfo"
           :id="workInfo.id"
           :category="workInfo.category"
-          :name="workInfo.name"
-          :date="workInfo.date"
-          :skills="workInfo.skills"
-          :tags="workInfo.tags"
-          :description="workInfo.description"
+          :skills-count="workInfo.skillsCount"
+          :tags-count="workInfo.tagsCount"
           :demoImgs="workInfo.demoImgs"
           :imgs="workInfo.imgs"
           :demoLinks="workInfo.demoLinks"
@@ -24,6 +21,8 @@
           v-for="(item, index) in workInfo.imgs"
           :key="index"
           :demoImgs="[item]"
+          :showName="false"
+          :showFirstTag="false"
         />
       </div>
     </Section>

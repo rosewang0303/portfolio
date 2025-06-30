@@ -1,6 +1,6 @@
 <template>
   <div class="tag-item">
-    {{ props.text }}
+    {{ $t(props.text) }}
   </div>
 </template>
 <script setup lang="ts">

@@ -1,6 +1,8 @@
 <template>
   <div class="work-gallery-item">
-    <div v-if="props.tags" class="work-gallery-item__tag">{{ props.tags[0] }}</div>
+    <div v-if="showFirstTag" class="work-gallery-item__tag">
+      {{ $t(works.lang.tagsPrefix + props.id + '_1') }}
+    </div>
     <router-link
       v-if="props.showLink"
       :to="`/works/${props.id}`"
@@ -20,7 +22,7 @@
         />
       </div>
       <div class="work-gallery-item__name">
-        {{ props.name }}
+        {{ $t(works.lang.name + props.id) }}
       </div>
     </router-link>
     <div v-else class="work-gallery-item__wrap">
@@ -37,8 +39,8 @@
           :src="img"
         />
       </div>
-      <div class="work-gallery-item__name">
-        {{ props.name }}
+      <div v-if="showName" class="work-gallery-item__name">
+        {{ $t(works.lang.name + props.id) }}
       </div>
     </div>
   </div>
@@ -46,8 +48,12 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import type { WorksItemType } from '@/types';
+import { works } from '@/data';
 
-const props = defineProps<Partial<WorksItemType & { showLink: boolean }>>();
+const props =
+  defineProps<
+    Partial<WorksItemType & { showLink: boolean; showName: boolean; showFirstTag: boolean }>
+  >();
 
 const currentIndex = ref(0);
 const timer = ref<number | undefined>(undefined);

@@ -6,7 +6,7 @@
       :key="index"
       @click="clickHandler(item.key)"
     >
-      {{ item.text }}
+      {{ $t(item.text) }}
     </button>
   </div>
 </template>

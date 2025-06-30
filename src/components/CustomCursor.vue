@@ -4,7 +4,7 @@
     :style="{ left: `${x}px`, top: `${y}px` }"
   >
     <div class="custom-cursor__mouse"></div>
-    <div class="custom-cursor__text">前往 ↗</div>
+    <div class="custom-cursor__text">{{ $t('CURSOR__TEXT') }}</div>
   </div>
 </template>
 

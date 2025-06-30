@@ -1,26 +1,34 @@
 <template>
   <div class="work-item">
-    <div class="work-item__date">{{ props.date }}</div>
+    <div class="work-item__date">{{ $t(works.lang.date + props.id) }}</div>
     <div class="work-item__wrap">
       <div>
         <div class="work-item__name">
-          {{ props.name }}
+          {{ $t(works.lang.name + props.id) }}
         </div>
-        <div class="work-item__description" v-html="props.description"></div>
+        <div class="work-item__description" v-html="$t(works.lang.description + props.id)"></div>
         <div class="work-item__skills">
-          <div v-for="(item, index) in props.skills" :key="index" v-html="item"></div>
+          <div
+            v-for="(item, index) in props.skillsCount"
+            :key="index"
+            v-html="$t(works.lang.skillsPrefix + props.id + '_' + (index + 1))"
+          ></div>
         </div>
       </div>
       <div>
         <div class="work-item__tags">
-          <TagItem v-for="(item, index) in props.tags" :key="index" :text="item"></TagItem>
+          <TagItem
+            v-for="(item, index) in props.tagsCount"
+            :key="index"
+            :text="$t(works.lang.tagsPrefix + props.id + '_' + (index + 1))"
+          ></TagItem>
         </div>
         <div class="work-item__btns">
           <BtnItem v-if="props.github" :link="props.github" class="github"
             ><span class="github__icon"></span>Github</BtnItem
           >
           <BtnItem v-for="(item, index) in props.demoLinks" :link="item.link" :key="index">{{
-            item.text
+            $t(item.text)
           }}</BtnItem>
         </div>
       </div>
@@ -31,6 +39,7 @@
 import type { WorksItemType } from '@/types';
 import BtnItem from '@/components/Shared/BtnItem.vue';
 import TagItem from '@/components/Shared/TagItem.vue';
+import { works } from '@/data';
 
 const props = defineProps<WorksItemType>();
 </script>

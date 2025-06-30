@@ -4,8 +4,8 @@
       <div class="title__arrow"></div>
       <div :class="['title__wrap', { 'title__wrap--empty': contentIsEmpty }]">
         <div class="title__left">
-          <div class="title__position">{{ props.position }}</div>
-          <div class="title__company">{{ props.company }}</div>
+          <div class="title__position">{{ $t(props.position) }}</div>
+          <div class="title__company">@{{ $t(props.company) }}</div>
         </div>
         <div class="title__right">
           <div class="title__time">{{ props.time }}</div>
@@ -20,7 +20,7 @@
     </div>
     <div :class="['content', { 'content--open': isCollapse }]">
       <div class="content__projects">
-        <div v-for="(item, index) in props.project" :key="index">{{ item }}</div>
+        <div v-for="(item, index) in props.project" :key="index">{{ $t(item) }}</div>
       </div>
       <div class="content__tags">
         <TagItem v-for="(item, index) in props.tags" :key="index" :text="item" />
