@@ -474,14 +474,9 @@ export const works: WorksType = {
     },
     {
       id: 210203,
-      name: 'WORKS__PROJECTS_10__NAME',
       category: WorksCategoryEnum.SIDE_PROJECT,
-      date: 'WORKS__PROJECTS_10__DATE',
       skillsCount: 4,
-      skillsPrefix: 'WORKS__PROJECTS_10__SKILLS_',
-      description: 'WORKS__PROJECTS_10__DESCRIPTION',
       tagsCount: 5,
-      tagsPrefix: 'WORKS__PROJECTS_10__TAGS_',
       demoImgs: ['/assets/works/bus_timetable.png'],
       imgs: ['/assets/works/bus_timetable.png'],
       demoLinks: [
