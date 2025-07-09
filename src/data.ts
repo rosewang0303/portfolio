@@ -41,7 +41,7 @@ export const navLeft: NavLeftType = {
       text: 'GitHub',
     },
     {
-      url: 'https://www.linkedin.com/in/rose-wang-9577631b8/',
+      url: 'https://www.linkedin.com/in/wangrose',
       img: '/assets/icon/linkin.svg',
       text: 'LinkedIn',
     },
@@ -100,10 +100,11 @@ export const skills: SkillsType = {
       skill: [
         'SKILLS__ITEMS_2__SKILL_1',
         'SKILLS__ITEMS_2__SKILL_2',
-        null,
         'SKILLS__ITEMS_2__SKILL_3',
         'SKILLS__ITEMS_2__SKILL_4',
+        null,
         'SKILLS__ITEMS_2__SKILL_5',
+        'SKILLS__ITEMS_2__SKILL_6',
       ],
     },
     {
@@ -116,6 +117,9 @@ export const skills: SkillsType = {
         null,
         'SKILLS__ITEMS_3__SKILL_4',
         'SKILLS__ITEMS_3__SKILL_5',
+        null,
+        'SKILLS__ITEMS_3__SKILL_6',
+        'SKILLS__ITEMS_3__SKILL_7',
       ],
     },
     {
@@ -128,8 +132,9 @@ export const skills: SkillsType = {
         'SKILLS__ITEMS_4__SKILL_3',
         'SKILLS__ITEMS_4__SKILL_4',
         'SKILLS__ITEMS_4__SKILL_5',
-        null,
         'SKILLS__ITEMS_4__SKILL_6',
+        null,
+        'SKILLS__ITEMS_4__SKILL_7',
       ],
     },
   ],
@@ -150,6 +155,7 @@ export const experience: ExperienceType = {
         'EXPERIENCE__1__PROJECT_3',
         'EXPERIENCE__1__PROJECT_4',
         'EXPERIENCE__1__PROJECT_5',
+        'EXPERIENCE__1__PROJECT_6',
         // '使用 Nuxt.js 與 Vue.js 開發多款手遊的行銷網站、預約註冊頁面、遊戲內高互動活動頁，以及多套內部後台管理系統的開發與維護',
         // '參與公司多款熱門手遊相關網頁開發，包括「傳說對決」、「DeltaForce」、「天涯明月刀M」、「決勝時刻：Mobile」、「黑色五葉草M 魔法帝之道」、「黎明覺醒」、「鋼之鍊金術師M」等專案',
         // '面對百萬等級用戶流量，進行高效能資料渲染與 UX 優化，確保網站穩定性與使用體驗',
@@ -236,7 +242,7 @@ export const experience: ExperienceType = {
     {
       position: 'EXPERIENCE__3__POSITION',
       company: 'EXPERIENCE__3__COMPANY',
-      time: '2019 ~ 2021 (6m)',
+      time: '2019 ~ 2021',
       project: [
         'EXPERIENCE__3__PROJECT_1',
         'EXPERIENCE__3__PROJECT_2',
@@ -420,6 +426,20 @@ export const works: WorksType = {
         },
       ],
       github: 'https://github.com/rosewang0303/taiwan-spots',
+    },
+    {
+      id: 23101,
+      category: WorksCategoryEnum.SIDE_PROJECT,
+      skillsCount: 2,
+      tagsCount: 3,
+      demoImgs: ['/assets/works/phaser_game.png'],
+      imgs: ['/assets/works/phaser_game.png'],
+      demoLinks: [
+        {
+          link: 'https://codepen.io/garena-tw-eng/full/oNPGpBj',
+          text: 'WORKS__DEMO_LINKS',
+        },
+      ],
     },
     {
       id: 22102,
