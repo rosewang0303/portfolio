@@ -33,7 +33,7 @@ onMounted(() => {
   @include flexCenter;
   flex-direction: column;
   position: fixed;
-  z-index: 1;
+  z-index: 3;
   top: 0;
   left: 0;
   background-color: $white;
