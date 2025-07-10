@@ -456,12 +456,12 @@ export const works: WorksType = {
       tagsCount: 5,
       demoImgs: ['/assets/works/staking_game.png'],
       imgs: ['/assets/works/staking_game.png'],
-      demoLinks: [
-        {
-          link: '',
-          text: '', // WORKS__DEMO_LINKS
-        },
-      ],
+      // demoLinks: [
+      //   {
+      //     link: '',
+      //     text: '', // WORKS__DEMO_LINKS
+      //   },
+      // ],
     },
     {
       id: 20201,
