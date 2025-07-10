@@ -25,7 +25,7 @@ const iconsImg = {
   width: 100vw;
   height: $mobile-nav-bar-height;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   display: none;
