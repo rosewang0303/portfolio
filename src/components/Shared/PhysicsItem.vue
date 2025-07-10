@@ -13,19 +13,23 @@ import { ref, onMounted, onBeforeUnmount, inject } from 'vue';
 import Matter from 'matter-js';
 import type { World } from 'matter-js';
 
+const props = defineProps<{
+  maxWidth: number;
+}>();
+
 const world = inject<World>('matterWorld');
 
 const elRef = ref<HTMLElement | null>(null);
 const position = ref({ x: 0, y: 0 });
 const body = ref<Matter.Body | null>(null);
+const min = 100;
 
-const min = 200;
-const max = 800;
 const numberPool = ref<number[]>([]);
 
 const initNumberPool = () => {
   numberPool.value = [];
-  for (let i = min; i <= max; i++) {
+  console.error(props.maxWidth); // TODO
+  for (let i = min; i <= props.maxWidth; i++) {
     numberPool.value.push(i);
   }
 
@@ -92,6 +96,12 @@ onBeforeUnmount(() => {
 
   img {
     pointer-events: none;
+  }
+
+  @include mobile {
+    img {
+      width: 40px;
+    }
   }
 }
 </style>
