@@ -28,8 +28,9 @@ const numberPool = ref<number[]>([]);
 
 const initNumberPool = () => {
   numberPool.value = [];
-  console.error(props.maxWidth); // TODO
-  for (let i = min; i <= props.maxWidth; i++) {
+
+  const max = 750; // TODO
+  for (let i = min; i <= (props.maxWidth === 0 ? max : props.maxWidth); i++) {
     numberPool.value.push(i);
   }
 
