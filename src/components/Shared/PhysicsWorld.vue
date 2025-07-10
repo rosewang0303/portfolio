@@ -1,7 +1,7 @@
 <template>
   <section class="physics-world">
     <div ref="containerRef" class="physics-area">
-      <PhysicsItem v-for="(img, index) in brandLogoList" :key="index">
+      <PhysicsItem v-for="(img, index) in brandLogoList" :key="index" :maxWidth="maxWidth">
         <img :src="img" />
       </PhysicsItem>
     </div>
@@ -17,6 +17,7 @@ import { brandLogoList } from '@/data';
 const containerRef = ref<HTMLElement | null>(null);
 const engine = Matter.Engine.create();
 const runner = Matter.Runner.create();
+const maxWidth = ref(0);
 
 // 提供 World 給子元件
 provide('matterWorld', engine.world);
@@ -28,6 +29,8 @@ onMounted(() => {
   if (!containerRef.value) return;
 
   const bounds = containerRef.value.getBoundingClientRect();
+  maxWidth.value = bounds.width;
+
   const thickness = 100;
 
   const walls = [
