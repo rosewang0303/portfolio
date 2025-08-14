@@ -83,11 +83,6 @@ const clickHandler = () => {
         display: block;
       }
     }
-    &--open {
-      .title__arrow {
-        animation: unset;
-      }
-    }
 
     &__wrap {
       display: flex;
@@ -154,14 +149,18 @@ const clickHandler = () => {
   }
 
   .content {
-    display: none;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
+    transition: 0.8s max-height ease-out;
 
     &--open {
-      padding: 16px 20px;
       border: $white solid 0.5px;
-      display: block;
+      max-height: 600px;
     }
     &__projects {
+      margin-top: 16px;
+
       div {
         position: relative;
         padding-left: 12px;
@@ -178,6 +177,7 @@ const clickHandler = () => {
       display: flex;
       flex-wrap: wrap;
       margin-top: 28px;
+      margin-bottom: 16px;
     }
   }
 
